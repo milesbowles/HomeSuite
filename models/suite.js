@@ -14,6 +14,7 @@ const suiteSchema = new Schema({
         type: String,
         required: true
     },
+    /** Is the user logged in at the moment? */
     loggedIn: {
         type: Boolean,
         default: false
