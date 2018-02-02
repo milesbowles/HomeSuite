@@ -1,5 +1,7 @@
 /** Bring in the database to be able to manipulate it */
 const db = require("../models");
+
+
 /** Export the controllers */
 module.exports = {
     /** Find every element in the database */
