@@ -3,7 +3,7 @@ const db = require("../models");
 /** Export the controllers */
 module.exports = {
     /** Find every element in the database */
-    findAll: function(req, res){
+    findAllUsers: function(req, res){
         db.Suite.find({}).then(function(data){
             res.json(data);
         });
@@ -20,6 +20,7 @@ module.exports = {
         });
     },
     /** Update values by id */
+    /** This general function can change username, password, loggedIn, etcetera */
     updateUser: function(req, res){
         db.Suite.update(
             /** This id will come in through the params, */
