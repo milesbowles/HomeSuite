@@ -7,11 +7,14 @@ function Clock() {
   let minutes = time.getMinutes().toString();
   let seconds = time.getSeconds().toString();
 
-  /** If hours are single digit, add a zero before the hour */
+  /** If hours are single digit */
   if (hours.length < 2) {
+    /** If hours are 0 */
     if(hours === "0"){
+      /** Redefine the hours to display 12 */
       hours = "12";
     }
+    /** If hours are not zero, tag a zero before the single digit */
     else {hours = '0' + hours;}
   }
   /** If minutes are single digit, add a zero before the minute */
