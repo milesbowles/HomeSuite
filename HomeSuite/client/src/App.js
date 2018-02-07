@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import "./component/calculator/calculatorStyle";
-
-import autoScalingText from "./component/calculator/autoScalingText";
-
+/** Import the application container */
+import SiteWrapper from "./pages/siteWrapper";
+/** This import is made possible by the index file in component/panel because it exports everything together */
+import {PanelWrapper, Direction} from "./component/panel";
 
 
 const welcome = "Welcome to React"; 
@@ -12,19 +12,15 @@ const welcome = "Welcome to React";
 class App extends Component {
   render() {
     return (
-      <calculatorDisplay />
+      <SiteWrapper>
+        <PanelWrapper>
+          <Direction direction={"up"}>
+            <h1>This test was successful</h1>
+          </Direction>
+        </PanelWrapper>
+      </SiteWrapper>
     );
   }
 }
-
-
-class Welcome extends Component {
-  render() {
-    return (
-      <h1 className="App-title">{welcome}</h1>
-    )
-  }
-}
-
 
 export default App;
