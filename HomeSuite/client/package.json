@@ -1,10 +1,16 @@
 {
-  "name": "client",
+  "name": "calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-loader": "^1.9.0",
+    "eslint-module-utils": "^2.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "react-scripts": "1.1.0"
   },
   "scripts": {
@@ -12,5 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
   }
 }
