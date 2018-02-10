@@ -1,3 +1,4 @@
+
 /** import Component */
 import React, {Component} from "react";
 /** This import is made possible by the index file in component/panel because it exports everything together */

@@ -1,5 +1,6 @@
 /** Import react */
 import React from "react";
+import "../../css/directionality.css";
 /** Direction elements will allow navigation to directions such as up, left, right/down etc. */
 /** This type of export will allow to export multiple components in the index file */
 export const Direction = props => {

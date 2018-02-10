@@ -2,7 +2,6 @@
 import React, {Component} from "react";
 /** This import is made possible by the index file in component/panel because it exports everything together */
 import {PanelWrapper, Direction} from "../component/panel";
-
 /** Main page will be the center part of the app */
 export class MainPage extends Component {
     /** A SiteWrapper component renders the following */
@@ -17,9 +16,9 @@ export class MainPage extends Component {
                  <Direction direction="right-down js-down js-right">down/right</Direction>
                  <Direction direction="left-down js-down js-left">down/left</Direction>
                  <Direction direction="down js-down">down</Direction>
-                 <span class="panel__zoom js-zoom">View All</span>
-                <h1 id="clock"></h1>
-                <div class="panel__animation-list">
+                 <span className="panel__zoom js-zoom">View All</span>
+                <h1 id="clock">Clock</h1>
+                <div className="panel__animation-list">
                     <h2>Good Evening, Miles.</h2>
                 </div>
              </PanelWrapper>

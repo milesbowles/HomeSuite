@@ -1,30 +1,8 @@
-body {
-    /* background-color: #282a2d; */
-    background-color: white;
-    background-repeat: repeat;
-    color: navy;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: .2rem;
-    margin: 0;
-    overflow: hidden;
-    perspective: 1000px;
-    text-transform: uppercase;
-  }
-  .site-wrap {
-    transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-  }
-  .site-wrap.show-all {
-    transform: rotateY(-15deg) scale(0.2);
-  }
-  .panel-wrap {
+.panel-wrap {
     height: 100vh;
     width: 100vw;
   }
-  h1 {
-    font-size: 20vmin;
-    margin: 0;
-  }
-  .panel-wrap {
+.panel-wrap {
     perspective: 2000px;
     transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1);
   }
@@ -202,10 +180,4 @@ body {
   .panel__animation-list span.active:after,
   .panel__animation-list span:hover:after {
     border-color: white;
-  }
-  
-  #clock {
-    font-weight: 300;
-    font-size: 100px;
-    color: black;
   }

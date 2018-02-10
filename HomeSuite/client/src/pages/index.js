@@ -12,3 +12,5 @@ export * from "./UpLeft";
 export * from "./UpRight";
 export * from "./DownLeft";
 export * from "./DownRight";
+
+export * from "./All";

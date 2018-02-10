@@ -8,7 +8,7 @@ export class Right extends Component {
     /** A Right component renders the following */
     render() {
         return (
-            <PanelWrapper x="0" y="0">
+            <PanelWrapper x="0" y="1">
                 <Direction direction="up js-up">up</Direction>
                  <Direction direction="left-top js-up js-left">up/left</Direction>
                  <Direction direction="left js-left">left</Direction>
