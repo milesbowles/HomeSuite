@@ -21,15 +21,29 @@ export class All extends Component {
         this.setState({ y: (parseInt(this.state.y, 10) - 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
         
     };
-    moveLeft(wrap) {
+    moveLeft() {
         /** Increment the pos_x variable by one */
-        this.setState({ x: this.state.x + 1 });
-        this.setState({ animate: "animate" });
+        this.setState({ x: (parseInt(this.state.x, 10) + 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
     };
-    moveRight(wrap) {
+    moveRight() {
         /** Decrement the x position */
-        this.setState({ x: this.state.x - 1 });
-        this.setState({ animate: "animate" });
+        this.setState({x: (parseInt(this.state.x, 10) - 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
+    };
+    moveUpRight(){
+        this.moveUp();
+        this.moveRight();
+    };
+    moveUpLeft(){
+        this.moveUp();
+        this.moveLeft();
+    }; 
+    moveDownRight(){
+        this.moveDown();
+        this.moveRight();
+    };
+    moveDownLeft(){
+        this.moveDown();
+        this.moveRight();
     };
     setPanelAndZoom(e) {
         /** To the pos_x variable, decrement the position by the target's current x position */
@@ -67,12 +81,12 @@ export class All extends Component {
                 <div className={`panel-wrap animate--none ${this.state.animate}`} style={{transform: this.state.styles}}>
                     <div className="panel" data-x-pos="0" data-y-pos="0">
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
-                        <span className="panel__nav panel__nav--right-top js-up js-right">up/right</span>
-                        <span className="panel__nav panel__nav--left-top js-up js-left">up/left</span>
-                        <span className="panel__nav panel__nav--left js-left">left</span>
-                        <span className="panel__nav panel__nav--right js-right">right</span>
-                        <span className="panel__nav panel__nav--right-down js-down js-right">down/right</span>
-                        <span className="panel__nav panel__nav--left-down js-down js-left">down/left</span>
+                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
+                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
+                        <span className="panel__nav panel__nav--right-down js-down js-right"onClick={this.moveDownRight.bind(this)}>down/right</span>
+                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <span className="panel__zoom js-zoom">View All</span>
                         <h1>Main</h1>
@@ -82,64 +96,64 @@ export class All extends Component {
                         </div>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="1">
-                        <span className="panel__nav panel__nav--left js-left">left</span>
-                        <span className="panel__nav panel__nav--right js-right">right</span>
-                        <span className="panel__nav panel__nav--right-down js-down js-right">down/right</span>
-                        <span className="panel__nav panel__nav--left-down js-down js-left">down/left</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
+                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
+                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Up</h1>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="1">
-                        <span className="panel__nav panel__nav--right-down js-down js-right">down/right</span>
-                        <span className="panel__nav panel__nav--right js-right">right</span>
-                        <span className="panel__nav panel__nav--down js-down">down</span>
+                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Up Left</h1>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="1">
-                        <span className="panel__nav panel__nav--left-down js-down js-left">down/left</span>
-                        <span className="panel__nav panel__nav--left js-left">left</span>
-                        <span className="panel__nav panel__nav--down js-down">down</span>
+                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Up Right</h1>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="0">
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
-                        <span className="panel__nav panel__nav--right-top js-up js-right">up/right</span>
-                        <span className="panel__nav panel__nav--right js-right">right</span>
-                        <span className="panel__nav panel__nav--right-down js-down js-right">down/right</span>
-                        <span className="panel__nav panel__nav--down js-down">down</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
+                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
+                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Left</h1>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="-1">
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
-                        <span className="panel__nav panel__nav--right-top js-up js-right">up/right</span>
-                        <span className="panel__nav panel__nav--right js-right">right</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
+                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <h1>Down Left</h1>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="-1">
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
-                        <span className="panel__nav panel__nav--left-top js-up js-left">up/left</span>
-                        <span className="panel__nav panel__nav--left js-left">left</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
+                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <h1>Down Right</h1>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="0">
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
-                        <span className="panel__nav panel__nav--left-top js-up js-left">up/left</span>
-                        <span className="panel__nav panel__nav--left js-left">left</span>
-                        <span className="panel__nav panel__nav--left-down js-down js-left">down/left</span>
-                        <span className="panel__nav panel__nav--down js-down">down</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
+                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
+                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Right</h1>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="-1">
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
-                        <span className="panel__nav panel__nav--left-top js-up js-left">up/left</span>
-                        <span className="panel__nav panel__nav--right-top js-up js-right">up/right</span>
-                        <span className="panel__nav panel__nav--left js-left">left</span>
-                        <span className="panel__nav panel__nav--right js-right">right</span>
-                        <span className="panel__nav panel__nav--down js-down">down</span>
+                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
+                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Down</h1>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="-2">
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <h1>Down 2</h1>
                     </div>
                 </div>
