@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
+import {Clock} from "../component/clock";
 
 export class All extends Component {
     /** The current x and y coordintes for the pages */
@@ -17,37 +18,37 @@ export class All extends Component {
     moveUp() {
         /** Increment the y value and set the transform style to translate */
         /** Remember, setState is asynchronous and thus the following syntax */
-        this.setState({ y: (parseInt(this.state.y, 10) + 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
+        this.setState({ y: (parseInt(this.state.y, 10) + 1).toString() }, () => this.setState({ styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)` }));
     };
     moveDown() {
         /** Decrement the y value and set the transform style to translate */
         /** Remember, setState is asynchronous and thus the following syntax */
-        this.setState({ y: (parseInt(this.state.y, 10) - 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
-        
+        this.setState({ y: (parseInt(this.state.y, 10) - 1).toString() }, () => this.setState({ styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)` }));
+
     };
     moveLeft() {
         /** Icrement the x value and set the transform style to translate */
         /** Remember, setState is asynchronous and thus the following syntax */
-        this.setState({ x: (parseInt(this.state.x, 10) + 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
+        this.setState({ x: (parseInt(this.state.x, 10) + 1).toString() }, () => this.setState({ styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)` }));
     };
     moveRight() {
         /** Decrement the x value and set the transform style to translate */
         /** Remember, setState is asynchronous and thus the following syntax */
-        this.setState({x: (parseInt(this.state.x, 10) - 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
+        this.setState({ x: (parseInt(this.state.x, 10) - 1).toString() }, () => this.setState({ styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)` }));
     };
-    moveUpRight(){
+    moveUpRight() {
         this.moveUp();
         this.moveRight();
     };
-    moveUpLeft(){
+    moveUpLeft() {
         this.moveUp();
         this.moveLeft();
-    }; 
-    moveDownRight(){
+    };
+    moveDownRight() {
         this.moveDown();
         this.moveRight();
     };
-    moveDownLeft(){
+    moveDownLeft() {
         this.moveDown();
         this.moveLeft();
     };
@@ -84,19 +85,18 @@ export class All extends Component {
     render() {
         return (
             <div className="site-wrap">
-                <div className="panel-wrap animate--none" style={{transform: this.state.styles}}>
+                <div className="panel-wrap animate--none" style={{ transform: this.state.styles }}>
                     <div className="panel" data-x-pos="0" data-y-pos="0">
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
-                        <span className="panel__nav panel__nav--right-down js-down js-right"onClick={this.moveDownRight.bind(this)}>down/right</span>
+                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <span className="panel__zoom js-zoom">View All</span>
-                        <h1>Main</h1>
-
+                        <Clock/>
                         <div className="panel__animation-list">
                             <h2>Good Evening, Miles.</h2>
                         </div>
