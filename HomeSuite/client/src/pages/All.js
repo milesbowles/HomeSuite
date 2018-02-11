@@ -4,29 +4,35 @@ import "../App.css";
 export class All extends Component {
     /** The current x and y coordintes for the pages */
     state = {
+        /** Declare the x positioning on the coordinte */
         x: "0",
+        /** Declare the y positioning on the coordinte */
         y: "0",
-        animate: "",
+        /** Declare the styling for that will handle transforming and translating the css */
         styles: ""
     };
     componentDidMount() {
 
     };
     moveUp() {
+        /** Increment the y value and set the transform style to translate */
+        /** Remember, setState is asynchronous and thus the following syntax */
         this.setState({ y: (parseInt(this.state.y, 10) + 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
-        /** Increment the pos_y variable by one */
     };
     moveDown() {
-        /** Decrement the y positioning */
+        /** Decrement the y value and set the transform style to translate */
+        /** Remember, setState is asynchronous and thus the following syntax */
         this.setState({ y: (parseInt(this.state.y, 10) - 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
         
     };
     moveLeft() {
-        /** Increment the pos_x variable by one */
+        /** Icrement the x value and set the transform style to translate */
+        /** Remember, setState is asynchronous and thus the following syntax */
         this.setState({ x: (parseInt(this.state.x, 10) + 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
     };
     moveRight() {
-        /** Decrement the x position */
+        /** Decrement the x value and set the transform style to translate */
+        /** Remember, setState is asynchronous and thus the following syntax */
         this.setState({x: (parseInt(this.state.x, 10) - 1).toString() }, () => this.setState({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`}));
     };
     moveUpRight(){
@@ -43,7 +49,7 @@ export class All extends Component {
     };
     moveDownLeft(){
         this.moveDown();
-        this.moveRight();
+        this.moveLeft();
     };
     setPanelAndZoom(e) {
         /** To the pos_x variable, decrement the position by the target's current x position */
@@ -78,7 +84,7 @@ export class All extends Component {
     render() {
         return (
             <div className="site-wrap">
-                <div className={`panel-wrap animate--none ${this.state.animate}`} style={{transform: this.state.styles}}>
+                <div className="panel-wrap animate--none" style={{transform: this.state.styles}}>
                     <div className="panel" data-x-pos="0" data-y-pos="0">
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
@@ -144,7 +150,7 @@ export class All extends Component {
                         <h1>Right</h1>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="-1">
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp}>up</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
