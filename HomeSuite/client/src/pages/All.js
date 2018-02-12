@@ -11,7 +11,9 @@ export class All extends Component {
         y: "0",
         /** Declare the styling for that will handle transforming and translating the css */
         styles: "",
-        all: ""
+        all: "",
+        zoomX: "",
+        zoomY: ""
     };
     componentDidMount() {
 
@@ -26,6 +28,9 @@ export class All extends Component {
         /** Remember, setState is asynchronous and thus the following syntax */
         this.setState({ y: (parseInt(this.state.y, 10) - 1).toString() }, () => this.setState({ styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)` }));
 
+    };
+    moveDownTwice(){
+        this.setState({y: (parseInt(this.state.y, 10) - 2).toString()}, () => this.setState(({styles: `translateX(${this.state.x}00%) translateY(${this.state.y}00%)`})))
     };
     moveLeft() {
         /** Icrement the x value and set the transform style to translate */
@@ -56,30 +61,47 @@ export class All extends Component {
     zoomOut(e, site, panel) {
         /** To the site element, add the show-all class */
         this.setState({all: "show-all"});
-        /** Traverse the length of the panel element */
-        // for (var x = 0; x < panel.length; x++) {
-        //     (function (_x) {
-        //         /** For each panel element, add a click listener witht the setPanelAndZoom function below */
-        //         panel[_x].addEventListener('click', this.setPanelAndZoom);
-        //     })(x);
-        // }
     };
     setPanelAndZoom(e) {
-        /** To the pos_x variable, decrement the position by the target's current x position */
-        this.setState({ x: e.target.getAttribute('data-x-pos') });
-        /** To the pos_y variable, increment the position by the target's current y position */
-        this.setState({ y: e.target.getAttribute('data-y-pos') });
-        /** Call the zoomIn function below */
-        this.zoomIn();
-    };
-    ZoomIn(panel, site) {
-        /** Traverse the the length of the panel element */
-        for (var x = 0; x < panel.length; x++) {
-            /** For each panel element, remove the click listener with the setPanelAndZoom function */
-            panel[x].removeEventListener('click', this.setPanelAndZoom);
+        /** If the state is set to view-all */
+        if (this.state.all.length){
+            /** Grab the corresponding x and y values from the panel chosen */
+            var xVal = e.target.getAttribute("data-x-pos");
+            var yVal = e.target.getAttribute("data-y-pos");
+
+            /** Zoom into the chosen panel */
+            this.zoomIn(xVal, yVal);
         }
+    };
+    zoomIn(xVal, yVal) {
         /** From the site element, remove the show-all function */
-        this.setState({all: ""});
+        if (xVal === "0" && yVal === "1"){
+            this.setState({all: ""}, () => this.moveUp());
+        }
+        else if(xVal === "0" && yVal === "-1"){
+            this.setState({all: ""}, () => this.moveDown());
+        }
+        else if(xVal === "-1" && yVal === "0"){
+            this.setState({all: ""}, () => this.moveLeft());
+        }
+        else if(xVal === "1" && yVal === "0"){
+            this.setState({all: ""}, () => this.moveRight());
+        }
+        else if(xVal === "-1" && yVal === "1"){
+            this.setState({all: ""}, () => this.moveUpLeft());
+        }
+        else if(xVal === "1" && yVal === "1"){
+            this.setState({all: ""}, () => this.moveUpRight());
+        }
+        else if(xVal === "-1" && yVal === "-1"){
+            this.setState({all: ""}, () => this.moveDownLeft());
+        }
+        else if(xVal === "1" && yVal === "-1"){
+            this.setState({all: ""}, () => this.moveDownRight());
+        }
+        else {
+            this.setState({all: ""}, () => this.moveDownTwice());
+        }
     };
     render() {
         return (
@@ -100,7 +122,7 @@ export class All extends Component {
                             <h2>Good Evening, Miles.</h2>
                         </div>
                     </div>
-                    <div className="panel" data-x-pos="0" data-y-pos="1">
+                    <div className="panel" data-x-pos="0" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
@@ -108,19 +130,19 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Up</h1>
                     </div>
-                    <div className="panel" data-x-pos="-1" data-y-pos="1">
+                    <div className="panel" data-x-pos="-1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Up Left</h1>
                     </div>
-                    <div className="panel" data-x-pos="1" data-y-pos="1">
+                    <div className="panel" data-x-pos="1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Up Right</h1>
                     </div>
-                    <div className="panel" data-x-pos="-1" data-y-pos="0">
+                    <div className="panel" data-x-pos="-1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
@@ -128,19 +150,19 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Left</h1>
                     </div>
-                    <div className="panel" data-x-pos="-1" data-y-pos="-1">
+                    <div className="panel" data-x-pos="-1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <h1>Down Left</h1>
                     </div>
-                    <div className="panel" data-x-pos="1" data-y-pos="-1">
+                    <div className="panel" data-x-pos="1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <h1>Down Right</h1>
                     </div>
-                    <div className="panel" data-x-pos="1" data-y-pos="0">
+                    <div className="panel" data-x-pos="1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
@@ -148,7 +170,7 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Right</h1>
                     </div>
-                    <div className="panel" data-x-pos="0" data-y-pos="-1">
+                    <div className="panel" data-x-pos="0" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
@@ -157,7 +179,7 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         <h1>Down</h1>
                     </div>
-                    <div className="panel" data-x-pos="0" data-y-pos="-2">
+                    <div className="panel" data-x-pos="0" data-y-pos="-2" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <h1>Down 2</h1>
                     </div>
