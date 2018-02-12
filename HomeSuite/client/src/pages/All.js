@@ -10,7 +10,8 @@ export class All extends Component {
         /** Declare the y positioning on the coordinte */
         y: "0",
         /** Declare the styling for that will handle transforming and translating the css */
-        styles: ""
+        styles: "",
+        all: ""
     };
     componentDidMount() {
 
@@ -52,6 +53,17 @@ export class All extends Component {
         this.moveDown();
         this.moveLeft();
     };
+    zoomOut(e, site, panel) {
+        /** To the site element, add the show-all class */
+        this.setState({all: "show-all"});
+        /** Traverse the length of the panel element */
+        // for (var x = 0; x < panel.length; x++) {
+        //     (function (_x) {
+        //         /** For each panel element, add a click listener witht the setPanelAndZoom function below */
+        //         panel[_x].addEventListener('click', this.setPanelAndZoom);
+        //     })(x);
+        // }
+    };
     setPanelAndZoom(e) {
         /** To the pos_x variable, decrement the position by the target's current x position */
         this.setState({ x: e.target.getAttribute('data-x-pos') });
@@ -60,19 +72,6 @@ export class All extends Component {
         /** Call the zoomIn function below */
         this.zoomIn();
     };
-    zoomOut(e, site, panel) {
-        /** stopPropatation detaches this event from the parent elements so it's not applied to them */
-        e.stopPropagation();
-        /** To the site element, add the show-all class */
-        this.addClass(site, 'show-all');
-        /** Traverse the length of the panel element */
-        for (var x = 0; x < panel.length; x++) {
-            (function (_x) {
-                /** For each panel element, add a click listener witht the setPanelAndZoom function below */
-                panel[_x].addEventListener('click', this.setPanelAndZoom);
-            })(x);
-        }
-    };
     ZoomIn(panel, site) {
         /** Traverse the the length of the panel element */
         for (var x = 0; x < panel.length; x++) {
@@ -80,13 +79,13 @@ export class All extends Component {
             panel[x].removeEventListener('click', this.setPanelAndZoom);
         }
         /** From the site element, remove the show-all function */
-        this.removeClass(site, 'show-all');
+        this.setState({all: ""});
     };
     render() {
         return (
-            <div className="site-wrap">
+            <div className={`site-wrap ${this.state.all}`}>
                 <div className="panel-wrap animate--none" style={{ transform: this.state.styles }}>
-                    <div className="panel" data-x-pos="0" data-y-pos="0">
+                    <div className="panel" data-x-pos="0" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
@@ -95,7 +94,7 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
-                        <span className="panel__zoom js-zoom">View All</span>
+                        <span className="panel__zoom js-zoom" onClick={this.zoomOut.bind(this)}>View All</span>
                         <Clock/>
                         <div className="panel__animation-list">
                             <h2>Good Evening, Miles.</h2>

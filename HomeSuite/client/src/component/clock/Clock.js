@@ -8,13 +8,18 @@ export class Clock extends Component {
         seconds: ""
     };
     componentDidMount() {
+        /** Every second that passes, update the time */
+        /** Perform the getTime function, which defines hours, minutes, seconds */
         setInterval(() => {
             this.setState({ time: new Date() }, () => this.getTime());
         }, 1000);
     };
     getTime() {
+        /** Grab the hours from the date object */
         let hours = (this.state.time.getHours() % 12).toString();
+        /** Grab the minutes from the date object */
         let minutes = this.state.time.getMinutes().toString();
+        /** Grab the seconds from the date object */
         let seconds = this.state.time.getSeconds().toString();
 
         /** If hours are a single digit */
@@ -37,13 +42,16 @@ export class Clock extends Component {
         if (seconds.length < 2) {
             seconds = '0' + seconds;
         }
+        /** Call on the setTime function */
+        /** Which will assign the hours minutes and seconds necessary to display to the user */
         this.setTime(hours, minutes, seconds);
         // this.setTime(hours, minutes, seconds);
     };
     setTime(hours, minutes, seconds) {
-        this.setState({ hours: hours }, () => console.log(this.state.hours));
-        this.setState({ minutes: minutes }, () => console.log(this.state.minutes));
-        this.setState({ seconds: seconds }, () => console.log(this.state.seconds));
+        /** Assign the hours */
+        this.setState({ hours: hours });
+        this.setState({ minutes: minutes });
+        this.setState({ seconds: seconds });
     };
     render() {
         return (

@@ -9,15 +9,6 @@ const App = () =>
       /** A wrapper that encapsulates everything */
       <div className="site-wrap">
         <div className="panel-wrap animate--none">
-          {/* <MainPage/>
-          <Up/>
-          <Down/>
-          <Left/>
-          <Right/>
-          <UpLeft/>
-          <UpRight/>
-          <DownLeft/>
-          <DownRight/> */}
           <All/>
         </div>
       </div>
