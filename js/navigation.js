@@ -34,6 +34,7 @@ function removeClass(el, cls) {
 
 var site = doc.getElementsByClassName('site-wrap')[0];
 var wrap = doc.getElementsByClassName('panel-wrap')[0];
+console.log(wrap);
 
 var panel = doc.getElementsByClassName('panel');
 
