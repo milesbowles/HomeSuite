@@ -75,32 +75,46 @@ export class All extends Component {
     };
     zoomIn(xVal, yVal) {
         /** From the site element, remove the show-all function */
+
+        /** Move to the top panel */
         if (xVal === "0" && yVal === "1"){
             this.setState({all: ""}, () => this.moveUp());
         }
+        /** Move to the bottom component */
         else if(xVal === "0" && yVal === "-1"){
             this.setState({all: ""}, () => this.moveDown());
         }
+        /** Move to left panel */
         else if(xVal === "-1" && yVal === "0"){
             this.setState({all: ""}, () => this.moveLeft());
         }
+        /** Move to right panel */
         else if(xVal === "1" && yVal === "0"){
             this.setState({all: ""}, () => this.moveRight());
         }
+        /** Move to Left/Left panel */
         else if(xVal === "-1" && yVal === "1"){
             this.setState({all: ""}, () => this.moveUpLeft());
         }
+        /** Move to UP/Right panel */
         else if(xVal === "1" && yVal === "1"){
             this.setState({all: ""}, () => this.moveUpRight());
         }
+        /** Move to the Left/Bottom panel */
         else if(xVal === "-1" && yVal === "-1"){
             this.setState({all: ""}, () => this.moveDownLeft());
         }
+        /** Move to Bottom/Right panel */
         else if(xVal === "1" && yVal === "-1"){
             this.setState({all: ""}, () => this.moveDownRight());
         }
-        else {
+        /** Move to second Down Panel */
+        else if(xVal === "0" && yVal === "-2") {
             this.setState({all: ""}, () => this.moveDownTwice());
+        }
+        /** Other wise just go to the main page */
+        else {
+            this.setState({all: ""});
         }
     };
     render() {
