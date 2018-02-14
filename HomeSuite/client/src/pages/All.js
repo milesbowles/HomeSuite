@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import {Clock} from "../component/clock";
+import Calculator from "../component/calculator";
 
 export class All extends Component {
     /** The current x and y coordintes for the pages */
@@ -182,7 +183,8 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
-                        <h1>Right</h1>
+                        {/* <h1>Right</h1> */}
+                        <Calculator/>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
