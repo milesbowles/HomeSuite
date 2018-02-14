@@ -1,1 +1,3 @@
-export {default} from "./CalculatorWorkings.js";
+import Calculator from "./Calculator"
+
+export default Calculator;

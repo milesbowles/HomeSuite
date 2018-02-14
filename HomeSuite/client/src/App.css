@@ -14,7 +14,7 @@ body {
     transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   }
   .site-wrap.show-all {
-    transform: rotateY(-15deg) scale(0.2);
+    transform: scale(0.3);
   }
   .panel-wrap {
     height: 100vh;
