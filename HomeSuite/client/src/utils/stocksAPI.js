@@ -10,6 +10,6 @@ export default {
   getStocks: function(company){
         /** Send the entire get request */
         /** If the whole request isn't sent, data cannot be accessed properly */
-        return axios.get("https://www.quandl.com/api/v3/datasets/WIKI/" + company + "/data.json?api_key=" + APIKEY);
+        return axios.get("https://www.quandl.com/api/v3/datasets/WIKI/" + company + "/data.json?api_key=" + APIKEY)
     }
 };
