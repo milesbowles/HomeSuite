@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import {Clock} from "../component/clock";
-import {Greeting} from "../component/Greeting";
+import {Greeting} from "../component/greeting";
 import Calculator from "../component/calculator";
 
 export class All extends Component {
