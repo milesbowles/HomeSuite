@@ -7,11 +7,12 @@ export class Greeting extends Component {
         hours: ""
     };
     componentDidMount() {
-        /** Every second that passes, update the time */
-        /** Perform the getTime function, which defines hours, minutes, seconds */
+        // Sets state as soon as component mounts 
+        this.setState({ time: new Date() }, () => this.updateGreeting());
+        /** Every second that passes, update the greeting*/
         setInterval(() => {
             this.setState({ time: new Date() }, () => this.updateGreeting());
-        }, 3600);
+        }, 1000);
     };
     updateGreeting() {
 
