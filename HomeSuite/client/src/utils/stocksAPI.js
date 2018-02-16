@@ -8,9 +8,8 @@ const APIKEY = "hkv27C8yymw8ekmbFQas";
 export default {
     /** Will retreive stock info on a company provided */
   getStocks: function(company){
-        /** Send a get request to the URL provided */
-        axios.get("https://www.quandl.com/api/v3/datasets/WIKI/" + company + "/data.json?api_key=" + APIKEY).then(function(response){
-            console.log(response);
-        });
+        /** Send the entire get request */
+        /** If the whole request isn't sent, data cannot be accessed properly */
+        return axios.get("https://www.quandl.com/api/v3/datasets/WIKI/" + company + "/data.json?api_key=" + APIKEY);
     }
 };
