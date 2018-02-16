@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import {Clock} from "../component/clock";
+import {Greeting} from "../component/Greeting";
 import Calculator from "../component/calculator";
 
 export class All extends Component {
@@ -134,7 +135,7 @@ export class All extends Component {
                         <span className="panel__zoom js-zoom" onClick={this.zoomOut.bind(this)}>View All</span>
                         <Clock/>
                         <div className="panel__animation-list">
-                            <h2 className="greeting">Good Evening, Miles.</h2>
+                            <Greeting/>
                         </div>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
