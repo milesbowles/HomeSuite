@@ -4,6 +4,7 @@ import {Clock} from "../component/clock";
 import {Greeting} from "../component/greeting";
 import Calculator from "../component/calculator";
 
+
 export class All extends Component {
     /** The current x and y coordintes for the pages */
     state = {
@@ -144,19 +145,19 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
-                        <h1>Up</h1>
+                        <h1>VideoSearch</h1>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
-                        <h1>Up Left</h1>
+                        <h1>Weather</h1>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
-                        <h1>Up Right</h1>
+                        <h1>Settings</h1>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
@@ -170,13 +171,13 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
-                        <h1>Down Left</h1>
+                        <h1>Links</h1>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
-                        <h1>Down Right</h1>
+                        <h1>Links</h1>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
@@ -194,7 +195,7 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
-                        <h1>Down</h1>
+                        <h1>Links</h1>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="-2" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
@@ -205,3 +206,4 @@ export class All extends Component {
         );
     };
 };
+
