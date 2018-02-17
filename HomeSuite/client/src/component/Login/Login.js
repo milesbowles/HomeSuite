@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from "axios";
 
 export class Login extends Component {
 
@@ -6,7 +7,6 @@ export class Login extends Component {
         super(props)
         this.state = {username: '', password: ''}
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event, field) {
@@ -16,10 +16,7 @@ export class Login extends Component {
         })
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
-        console.log(this.state.username, this.state.password)
-    }
+
 
     render () {
         return (
@@ -47,7 +44,7 @@ export class Login extends Component {
                         </ul>
 
                         <div id="login">
-                            <form onSubmit={this.handleSubmit}>
+                            <form onSubmit={ (event) => {this.props.checkAuth(event, this.state.username, this.state.password)}}>
                                 <p className="fieldset">
                                     <label className="image-replace email" htmlFor="signin-email">E-mail</label>
                                     <input className="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail" value={this.state.username} onChange={(event) => {this.handleChange(event, 'username')}}></input>
