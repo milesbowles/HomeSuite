@@ -1,0 +1,10 @@
+.container{
+    position: fixed;
+    top: 100px
+}
+.form-group{
+    margin-bottom:50px;
+}
+thead{
+    margin-bottom: 50px;
+}

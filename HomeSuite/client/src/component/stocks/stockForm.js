@@ -13,7 +13,7 @@ const Search = props =>
                     name="search"
                     type="text"
                     className="form-control"
-                    placeholder="Search For a Stock"
+                    placeholder="Type a Ticker Symbol"
                     id="search"
                 />
             </div>
