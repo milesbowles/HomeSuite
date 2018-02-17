@@ -7,18 +7,24 @@ import "./Stocks.css";
 
 export class Stocks extends Component {
     state = {
-        companies: ["AAPL", "FB", "SBUX", "NKE", "VZ"],
         stockInfo: [],
-        search: "",
-        stockPrice: ""
+        search: ""
     };
     /** When the page loads */
     componentDidMount() {
-        
+        /** Collect the default companies data to display onload */
+        /** This is a promise based function */
+        /** It is so that the asynchronous axios call can loop through the companies array in the stocksAPI file */
+        API.getDefault().then(temp => this.setState({stockInfo: temp}));
     };
     /** This function calls on the API folder to perform a get request */
     /** It takes in a company to search as a parameter */
     getStockInfo(company) {
+        /** Traverse the provided companies array */
+        // for (var i = 0; i < this.state.companies.length; i++){
+        //     /** Search the API with each element in that array */
+        //     API.getStocks(this.state.companies[i]);
+        // }
         API.getStocks(company).then(data => {
             this.setState({ stockInfo: this.state.stockInfo.concat({ name: this.state.search, price: data.data.dataset_data.data[0][4] }) });
         });
