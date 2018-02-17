@@ -40,7 +40,7 @@ export default {
         return axios.get("https://www.quandl.com/api/v3/datasets/WIKI/" + company + "/data.json?api_key=" + APIKEY)
     },
     /** Will retreive data for each stock in the default companies array */
-    getDefault: function(){
+    getDefaultStocksInfo: function(){
         /** Return the entire promise defined above to perform the then function whenever necessary in outside files */
         return companiesPromise;
     }

@@ -15,18 +15,20 @@ export class Stocks extends Component {
         /** Collect the default companies data to display onload */
         /** This is a promise based function */
         /** It is so that the asynchronous axios call can loop through the companies array in the stocksAPI file */
-        API.getDefault().then(temp => this.setState({stockInfo: temp}));
+        API.getDefaultStocksInfo().then(temp => this.setState({stockInfo: temp}));
     };
     /** This function calls on the API folder to perform a get request */
     /** It takes in a company to search as a parameter */
     getStockInfo(company) {
-        /** Traverse the provided companies array */
-        // for (var i = 0; i < this.state.companies.length; i++){
-        //     /** Search the API with each element in that array */
-        //     API.getStocks(this.state.companies[i]);
-        // }
+        /** Grab a copy of all the displayed stocks */
+        const infoTemp = this.state.stockInfo;
+        /** Call api to get company info */
         API.getStocks(company).then(data => {
-            this.setState({ stockInfo: this.state.stockInfo.concat({ name: this.state.search, price: data.data.dataset_data.data[0][4] }) });
+            /** Prepend new information that is searched */
+            /** This is to assure the new info is at the top of the table */
+            infoTemp.unshift({ name: this.state.search, price: data.data.dataset_data.data[0][4] });
+            /** Set the state to the copied and appended array */
+            this.setState({ stockInfo: infoTemp});
         });
     };
     /** This function goes to work when a user types info into input box */
