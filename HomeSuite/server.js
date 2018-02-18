@@ -25,11 +25,32 @@ app.use(routes);
 
 /** Make a connection to the MongoDB using the mongoose ORM */
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/homesuite",
-    {
-        useMongoClient: true
-    } 
+    process.env.MONGODB_URI || "mongodb://localhost/homesuite"
 );
+
+mongoose.Promise = global.Promise;
+//Get the default connection
+var db = mongoose.connection
+
+var Schema = mongoose.Schema;
+
+var testSchema = new Schema({
+    user: String,
+    password: String
+});
+
+
+var Model = mongoose.model('Test2', testSchema )
+var data = new Model({user:'yash', password:'hello'})
+data.save(function(error) {
+	console.log('I should have saved to the db')
+	if (error) {
+		console.log(error)
+	}
+})
+Model.findOne({}, function(err,data) {
+	console.log(data)
+})
 /** Listen to the application on the port */
 app.listen(PORT, function(){
     console.log("App listening on port " + PORT);

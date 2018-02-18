@@ -2,7 +2,9 @@
   "name": "calculator",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
+<<<<<<< HEAD
     "babel-eslint": "^8.2.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-import-resolver-node": "^0.3.2",
@@ -11,6 +13,12 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
+=======
+    "axios": "^0.17.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+>>>>>>> Ernie
     "react-scripts": "1.1.0"
   },
   "scripts": {
