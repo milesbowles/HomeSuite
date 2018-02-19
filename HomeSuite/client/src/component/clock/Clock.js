@@ -8,6 +8,8 @@ export class Clock extends Component {
         seconds: ""
     };
     componentDidMount() {
+        // Sets state as soon as component mounts 
+        this.setState({ time: new Date() }, () => this.getTime());
         /** Every second that passes, update the time */
         /** Perform the getTime function, which defines hours, minutes, seconds */
         setInterval(() => {

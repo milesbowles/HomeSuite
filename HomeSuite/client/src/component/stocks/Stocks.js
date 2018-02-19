@@ -15,7 +15,9 @@ export class Stocks extends Component {
         /** Collect the default companies data to display onload */
         /** This is a promise based function */
         /** It is so that the asynchronous axios call can loop through the companies array in the stocksAPI file */
-        API.getDefaultStocksInfo().then(temp => this.setState({stockInfo: temp}));
+        // API.getDefaultStocksInfo().then(temp => this.setState({stockInfo: temp}));
+        API.getDefaultStocksInfo(data => {
+            this.setState({stockInfo: this.state.stockInfo.concat(data)})});
     };
     /** This function calls on the API folder to perform a get request */
     /** It takes in a company to search as a parameter */
