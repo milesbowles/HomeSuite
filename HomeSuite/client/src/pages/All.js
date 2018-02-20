@@ -4,6 +4,9 @@ import {Clock} from "../component/clock";
 import {Greeting} from "../component/Greeting";
 import Calculator from "../component/calculator";
 import {Stocks} from "../component/stocks";
+// import AddStock from "../containers/AddStock";
+// import VisibleStocks from "../containers/VisibleStocks";
+// import {Stocks} from "../component/stocks";
 
 
 export class All extends Component {
@@ -15,9 +18,7 @@ export class All extends Component {
         y: "0",
         /** Declare the styling for that will handle transforming and translating the css */
         styles: "",
-        all: "",
-        zoomX: "",
-        zoomY: ""
+        all: ""
     };
     componentDidMount() {
 
@@ -166,6 +167,8 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
+                        {/* <AddStock/> */}
+                        {/* <VisibleStocks/> */}
                         <Stocks/>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>

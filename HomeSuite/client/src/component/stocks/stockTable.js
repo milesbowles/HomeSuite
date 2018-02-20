@@ -1,4 +1,5 @@
 import React from "react";
+import {Row} from "./stockRow";
 /** Table will display stocks in an orderly fashion */
 export const Table = props =>
     <table style={{ width: "75%" }}>
