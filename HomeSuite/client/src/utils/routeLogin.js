@@ -4,20 +4,44 @@ import { Login } from "../component/Login"
 import axios from "axios"
 
 export class RouteLogin extends Component {
-	state = {
-		loggedIn: false
-	};
-    checkAuth(event, email, password) {
+    state = {}
+    checkAuth (event, email, password, toRemember) {
         event.preventDefault()
-        axios.post('/api/users', {email:email, password:password}).then((res)=> {
-        	this.setState({loggedIn:res.data})
+        console.log(email)
+        axios.post('/api/auth', {email: email, password: password})
+        .then((res) => {
+        	this.setState({loggedIn: res.data})
         })
     };
+
+    newUser (event, email, username, password) {
+        event.preventDefault()
+        axios.post('/api/create', {email: email, username: username, password: password})
+        .then((res) => {
+            this.setState({loggedIn: res.data})
+        })
+    };
+
     routeApp(bool) {
-    	if (bool) {
-    		return (<All />)
-    	} else {
-    		return (<Login checkAuth={this.checkAuth.bind(this)} />)
+    	if (localStorage.getItem('persist') === "true" && !bool) {
+            axios.post('/api/auth/persist', {persistToken: localStorage.getItem('token')})
+            .then((res) => {
+                console.log(res.data)
+                if (res.data) {
+                    this.setState({loggedIn: true})
+                }
+            })
+            return null
+    	} else if (bool) {
+            return (<All />)
+        }
+        else {
+    		return (
+                <Login 
+                    checkAuth={this.checkAuth.bind(this)}
+                    newUser={this.newUser.bind(this)}
+                />
+            )
     	}
     };
 	render() {

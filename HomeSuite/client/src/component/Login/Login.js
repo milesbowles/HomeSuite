@@ -1,22 +1,39 @@
 import React, {Component} from "react";
 import axios from "axios";
+import bcrypt from "bcrypt-nodejs";
 
 export class Login extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {username: '', password: ''}
+        this.state = {email: '', password: '', newEmail: '', newUsername: '', newPassword: ''}
         this.handleChange = this.handleChange.bind(this)
-    }
+    };
 
     handleChange(event, field) {
         event.preventDefault()
         this.setState({[field]: event.target.value}, () => {
             console.log(this.state[field])
         })
-    }
+    };
 
+    registerPersistence(event, email, password) {
+        event.preventDefault()
+        if (localStorage.getItem('persist') === 'true') {
+            let salt = bcrypt.genSaltSync(5)
+            let hash = bcrypt.hashSync(password, salt)
+            localStorage.setItem('token', hash)
+            axios.post('/api/persist', {email: email, persistToken: hash})
+        }
+    };
 
+    updateLoginPersist(event) {
+        if (localStorage.getItem('persist') !== 'false' || !localStorage.getItem('persist')) {
+            localStorage.setItem("persist", false)
+        } else {
+            localStorage.setItem("persist", true)
+        }
+    };
 
     render () {
         return (
@@ -44,10 +61,10 @@ export class Login extends Component {
                         </ul>
 
                         <div id="login">
-                            <form onSubmit={ (event) => {this.props.checkAuth(event, this.state.username, this.state.password)}}>
+                            <form onSubmit={ (event) => {this.props.checkAuth(event, this.state.email, this.state.password); this.registerPersistence(event, this.state.email, this.state.password)}}>
                                 <p className="fieldset">
                                     <label className="image-replace email" htmlFor="signin-email">E-mail</label>
-                                    <input className="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail" value={this.state.username} onChange={(event) => {this.handleChange(event, 'username')}}></input>
+                                    <input className="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail" value={this.state.email} onChange={(event) => {this.handleChange(event, 'email')}}></input>
                                     <span className="error-message">An account with this email address does not exist!</span>
                                 </p>
 
@@ -56,6 +73,11 @@ export class Login extends Component {
                                     <input className="full-width has-padding has-border" id="signin-password" type="password" name="password" placeholder="Password" value={this.state.password} onChange={(event) => {this.handleChange(event, 'password')}}></input>
                                     <a href="#0" className="hide-password">Show</a>
                                     <span className="error-message">Wrong password! Try again.</span>
+                                </p>
+
+                                <p className='fieldset'>
+                                    <label className="image-replace password" htmlFor="rememberCheckBox">Remember Me</label>
+                                    <input className="full-width has-padding has-border" id="rememberCheckBox" type="checkbox" name="remember" onClick={(event) => {this.updateLoginPersist(event)}}></input>
                                 </p>
 
                                 <p className="fieldset">
@@ -70,22 +92,22 @@ export class Login extends Component {
                         </div>
 
                         <div id="signup">
-                            <form className="form" action='/login' method='post'>
+                            <form className="form" onSubmit={ (event) => {this.props.newUser(event, this.state.newEmail, this.state.newUsername, this.state.newPassword)}}>
                                 <p className="fieldset">
                                     <label className="image-replace username" htmlFor="signup-username">Username</label>
-                                    <input className="full-width has-padding has-border" id="signup-username" type="text" name='username' placeholder="Username"></input>
+                                    <input className="full-width has-padding has-border" id="signup-username" type="text" name='username' placeholder="Username" value={this.state.newUsername} onChange={(event) => {this.handleChange(event, 'newUsername')}}></input>
                                     <span className="error-message">Your username can only contain numeric and alphabetic symbols!</span>
                                 </p>
 
                                 <p className="fieldset">
                                     <label className="image-replace email" htmlFor="signup-email">E-mail</label>
-                                    <input className="full-width has-padding has-border" id="signup-email" type="email" name="email" placeholder="E-mail"></input>
+                                    <input className="full-width has-padding has-border" id="signup-email" type="email" name="email" placeholder="E-mail" value={this.state.newEmail} onChange={(event) => {this.handleChange(event, 'newEmail')}}></input>
                                     <span className="error-message">Enter a valid email address!</span>
                                 </p>
 
                                 <p className="fieldset">
                                     <label className="image-replace password" htmlFor="signup-password">Password</label>
-                                    <input className="full-width has-padding has-border" id="signup-password" type="password" name="password" placeholder="Password"></input>
+                                    <input className="full-width has-padding has-border" id="signup-password" type="password" name="password" placeholder="Password" value={this.state.newPassword} onChange={(event) => {this.handleChange(event, 'newPassword')}}></input>
                                     <a href="#0" className="hide-password">Show</a>
                                     <span className="error-message">Your password has to be at least 6 characters long!</span>
                                 </p>
