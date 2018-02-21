@@ -4,6 +4,6 @@ import React from "react";
     /** Allow addition of other properties */
     /** Add column with name and one with price */
     <tr {...props}>
-        <th className="col-md-6">{props.name}</th>
+        <th className="col-md-6">{props.ticker}</th>
         <th className="col-md-6">{props.price}</th>
     </tr>
