@@ -1,6 +1,8 @@
 import React from "react";
 
+/** Brings in video and a function to perform after selecting a video */
 export const VideoListItem = ({ video, onVideoSelect }) => {
+  /** Grab hold of a video's thumbnail url */
   const imageUrl = video.snippet.thumbnails.default.url;
 
   return (

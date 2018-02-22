@@ -18,8 +18,12 @@ export class SearchBar extends Component {
     );
   }
 
+  /** Called by an onChange property */
+  /** Takes in a term to search as an argument */
   onInputChange(term) {
+    /** Updates state variable */
     this.setState({ term });
+    
     this.props.onSearchTermChange(term);
   }
 }

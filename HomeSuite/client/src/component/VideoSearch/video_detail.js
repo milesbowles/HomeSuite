@@ -1,11 +1,14 @@
 import React from "react";
 
 export const VideoDetail = ({ video }) => {
+  /** If no video provided, display loading */
   if (!video) {
     return <div>Loading...</div>;
   }
 
+  /** Grab on to video props id */
   const videoId = video.id.videoId;
+  /** Define the url of the video */
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (

@@ -1,25 +1,25 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import React from 'react';
+// import { render } from 'react-dom';
+// import { BrowserRouter } from 'react-router-dom';
+// import './index.css';
+// import App from './App';
+// import registerServiceWorker from './registerServiceWorker';
 
-render((
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>
-	), document.getElementById('root'));
-registerServiceWorker();
+// render((
+// 	<BrowserRouter>
+// 		<App />
+// 	</BrowserRouter>
+// 	), document.getElementById('root'));
+// registerServiceWorker();
 
 
-// import 'babel-polyfill'
-//  
-// import React from 'react'
-// import { render } from 'react-dom'
-// import Root from './containers/Root'
-//  
-// render(
-//   <Root />,
-//   document.getElementById('root')
-// )
+import 'babel-polyfill'
+ 
+import React from 'react'
+import { render } from 'react-dom'
+import Root from './containers/Root'
+ 
+render(
+  <Root />,
+  document.getElementById('root')
+)
