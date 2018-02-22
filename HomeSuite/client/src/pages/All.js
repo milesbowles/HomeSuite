@@ -3,7 +3,6 @@ import "../App.css";
 import {Clock} from "../component/clock";
 import {Greeting} from "../component/greeting";
 import Calculator from "../component/calculator";
-import { BlurContainer } from "../component/BlurContainer/blur_container";
 import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
 
