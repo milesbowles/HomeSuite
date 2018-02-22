@@ -1,8 +1,9 @@
 body {
+    background-image: url('https://craftburgercromer.co.uk/wp-content/uploads/2016/08/Wood-Background-1-1024x700.jpg');
     /* background-color: #282a2d; */
-    background-color: white;
+    
     background-repeat: repeat;
-    color: navy;
+    color: gray;
     font-family: 'Oswald', sans-serif;
     letter-spacing: .2rem;
     margin: 0;
@@ -12,9 +13,11 @@ body {
   }
   .site-wrap {
     transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    background-color: transparent;
   }
   .site-wrap.show-all {
     transform: scale(0.3);
+    background-color: transparent;
   }
   .panel-wrap {
     height: 100vh;
@@ -33,7 +36,9 @@ body {
   .panel-wrap.animate--tilt2 {
     transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0.3s;
   }
+
   .panel {
+    background-color: transparent;
     height: 100vh;
     position: absolute;
     transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1);
@@ -43,7 +48,7 @@ body {
     background-size: cover; */
   }
   .panel:before {
-    background-color: transparent;
+    /* background-color: transparent; */
     bottom: 0;
     content: "";
     left: 0;
@@ -107,11 +112,11 @@ body {
   .panel__zoom {
     cursor: pointer;
     left: 50%;
-    opacity: .2;
+    opacity: 1;
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%) translateY(-12vmin);
-    transition: opacity 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.9s cubic-bezier(0.55, 0, 0.1, 1);
     user-select: none;
     z-index: 10;
   }
@@ -123,9 +128,9 @@ body {
   }
   .panel__nav {
     cursor: pointer;
-    opacity: .2;
+    opacity: .9;
     position: absolute;
-    transition: opacity 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.9s cubic-bezier(0.55, 0, 0.1, 1);
     user-select: none;
     will-change: opacity;
   }
@@ -182,7 +187,7 @@ body {
     display: inline-block;
     opacity: .2;
     position: relative;
-    transition: opacity 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: opacity 0.9s cubic-bezier(0.55, 0, 0.1, 1);
     user-select: none;
   }
   .panel__animation-list span:after {
@@ -192,7 +197,7 @@ body {
     left: -1px;
     position: absolute;
     right: 0;
-    transition: border-color 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: border-color 0.9s cubic-bezier(0.55, 0, 0.1, 1);
     width: 100%;
   }
   .panel__animation-list span.active,
@@ -207,5 +212,12 @@ body {
   #clock {
     font-weight: 300;
     font-size: 100px;
-    color: black;
+    color: rgb(255, 255, 255);
   }
+
+.allContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: green;
+    z-index: 10;
+}

@@ -25,6 +25,7 @@ module.exports = {
             if (res.length === 0) {
                 console.log('incorrect email')
             } else {
+                console.log(this.passwordCheck(password, res[0].password))
                 callback(this.passwordCheck(password, res[0].password))
             }
         })

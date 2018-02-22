@@ -5,12 +5,9 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^0.17.1",
-<<<<<<< HEAD
     "babel-polyfill": "^6.26.0",
     "cross-fetch": "^1.1.1",
-=======
     "bcrypt-nodejs": "0.0.3",
->>>>>>> 9a524b547a038f964700adc6d5dee1ac1e45b3d8
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",

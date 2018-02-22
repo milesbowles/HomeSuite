@@ -11,8 +11,7 @@ const App = () =>
       /** A wrapper that encapsulates everything */
       <div className="site-wrap">
         <div className="panel-wrap animate--none">
-          {/* <RouteLogin /> */}
-          <All/>
+          <RouteLogin />
         </div>
       </div>
 export default App;
