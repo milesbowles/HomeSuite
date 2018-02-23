@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 const Search = props =>
     <form>
         <div className="form-group row center-block">
@@ -24,4 +26,7 @@ const Search = props =>
             </div>
         </div>
     </form>;
+
+/** Assure proper input of props */
+
 export default Search;

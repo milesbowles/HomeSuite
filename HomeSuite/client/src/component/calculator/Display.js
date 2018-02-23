@@ -14,7 +14,9 @@ class Display extends React.Component {
     );
   }
 }
+/** propTypes assure proper input of props */
 Display.propTypes = {
+  /** Assure value is a string */
   value: PropTypes.string,
 };
 export default Display;

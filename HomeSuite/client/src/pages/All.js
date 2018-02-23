@@ -4,6 +4,9 @@ import {Clock} from "../component/clock";
 import {Greeting} from "../component/Greeting";
 import Calculator from "../component/calculator";
 import {Stocks} from "../component/stocks";
+// import AddStock from "../containers/AddStock";
+// import VisibleStocks from "../containers/VisibleStocks";
+// import {Stocks} from "../component/stocks";
 
 // import AddStock from "../containers/AddStock";
 // import VisibleStocks from "../containers/VisibleStocks";
@@ -18,9 +21,7 @@ export class All extends Component {
         y: "0",
         /** Declare the styling for that will handle transforming and translating the css */
         styles: "",
-        all: "",
-        zoomX: "",
-        zoomY: ""
+        all: ""
     };
     componentDidMount() {
 

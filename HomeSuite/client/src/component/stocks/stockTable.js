@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { Row } from "./stockRow";
 import API from "../../utils/stocksAPI";
+import {Row} from "./stockRow";
 /** Table will display stocks in an orderly fashion */
 export class Table extends Component {
     constructor(props) {
