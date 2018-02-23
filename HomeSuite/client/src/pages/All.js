@@ -8,8 +8,8 @@ import {Stocks} from "../component/stocks";
 // import VisibleStocks from "../containers/VisibleStocks";
 // import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
-import { Links1, Links2 } from "../component/Links";
-
+import { Links1, Links2, Links3 } from "../component/Links";
+import { Weather } from "../component/static";
 
 
 
@@ -131,14 +131,14 @@ export class All extends Component {
             <div className={`site-wrap ${this.state.all}`}>
                 <div className="panel-wrap animate--none" style={{ transform: this.state.styles }}>
                     <div className="panel" data-x-pos="0" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
-                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
-                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
-                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
-                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
-                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
-                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
-                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>Videos</span>
+                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>settings</span>
+                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>weather</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>stocks</span>
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>calculator</span>
+                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>links</span>
+                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>links</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>links</span>
                         <span className="panel__zoom js-zoom" onClick={this.zoomOut.bind(this)}>View All</span>
                         <Clock/>
                         <div className="panel__animation-list">
@@ -150,11 +150,12 @@ export class All extends Component {
                         <YouTubeSearch/>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
-                        <h1>Weather</h1> 
+                        <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>Home</span>
+                        {/* <h1>Weather</h1>  */}
+                        <Weather />
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
+                        <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>Home</span>
                         <h1>Settings</h1>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
@@ -163,31 +164,32 @@ export class All extends Component {
                         <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
                         {/* <AddStock/> */}
                         {/* <VisibleStocks/> */}
-=======
->>>>>>> b2cf4d09883ceff7aa513532c1085a221c193e1b
+
+                        <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>Home</span>
                         <Stocks/>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
+                        <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>Home</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
                         {/* <h1>Links</h1> */}
-                        <Links1/>>
+                        <Links1/>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
+                        <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>Home</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         {/* <h1>Links</h1> */}
-                        <Links2/>>
+                        <Links2/>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
+                        <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>Home</span>
                         <Calculator/>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>up</span>
+                        <span className="panel__nav panel__nav--up js-up" onClick={this.moveUp.bind(this)}>Home</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
-                        <h1>Links</h1>
+                        {/* <h1>Links</h1> */}
+                        <Links3/>
                     </div>
                 </div>
             </div>
