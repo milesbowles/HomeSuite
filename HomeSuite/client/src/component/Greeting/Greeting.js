@@ -25,7 +25,7 @@ export class Greeting extends Component {
         /** Updates greeting based on time of day */
         if (hours < 12) {
             greeting = 'Good Morning, ' + username + '.';
-        } else if (hours => 12 && hours < 18) {
+        } else if ( hours < 17) {
             greeting = 'Good Afternoon, ' + username + '.';
         } else if (hours > 17) {
             greeting = 'Good Evening, ' + username + '.';
