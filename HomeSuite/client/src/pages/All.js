@@ -9,7 +9,7 @@ import {Stocks} from "../component/stocks";
 // import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
 import { Links1, Links2 } from "../component/Links";
-
+import { Weather } from "../component/static";
 
 
 
@@ -151,7 +151,8 @@ export class All extends Component {
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
-                        <h1>Weather</h1> 
+                        {/* <h1>Weather</h1>  */}
+                        < Weather />
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
