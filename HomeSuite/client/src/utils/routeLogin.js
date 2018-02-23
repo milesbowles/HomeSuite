@@ -23,15 +23,23 @@ export class RouteLogin extends Component {
     };
 
     routeApp(bool) {
+        /** If localStorage has item "persist" and if not already logged in */
     	if (localStorage.getItem('persist') === "true" && !bool) {
+            /** Send post request with the localStorage item: token */
+            /** To allow user to sign in and change loggedIn state to true */
             axios.post('/api/auth/persist', {persistToken: localStorage.getItem('token')})
             .then((res) => {
+                /** If data is returned after the request */
                 if (res.data) {
+                    /** Set loggedIn state to true */
                     this.setState({loggedIn: true})
                 }
             })
+            /** Return null by default */
             return null
+            /** If the user happens to be loggedIn already */
     	} else if (bool) {
+            /** Simply return the main app */
             return (<All />)
         }
         else {

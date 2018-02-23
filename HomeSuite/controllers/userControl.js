@@ -35,10 +35,15 @@ module.exports = {
             callback(res[0])
         })
     },
+
     findPersistedUser: function(key, callback) {
+        /** Search database for the key passed in */
         db.User.find({persistToken: key} , (err, res) => {
+            /** If there is a match of the key stored in database */
             if (res.length !== 0) {
+                /** Send true through the callback */
                 callback(true)
+                /** If no match, send false through the callback */
             } else {
                 callback(false)
             }

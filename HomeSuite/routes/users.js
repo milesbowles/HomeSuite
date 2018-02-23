@@ -2,8 +2,17 @@ var express = require('express');
 var router = express.Router();
 const controller = require('../controllers/userControl.js')
 /* GET users listing to check authentication. */
+
+/** Note that the index file in this same folder */
+/** Will tag a /api path to these routes so they match what they are called in the client */
+/** For example, insteaad of /auth/persist, the index will make the route: /api/auth/persist */
+
 router.post('/auth/persist', function(req, res) {
+	/** Takes in a token and a callback */
 	controller.findPersistedUser(req.body.persistToken, (bool) => {
+		/** Send true or false to the client */
+		/** It's true or false depending on if the user is in the database */
+		/** Client side will use this boolean to set loggedIn state to true or false */
 		res.send(bool)
 	})
 });
