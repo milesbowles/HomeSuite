@@ -8,7 +8,7 @@ export class Links2 extends Component {
             <div className="container-thumbs">
                 <ul className="gallery">
                     <li className="gallery-item">
-                        <a href="https://www.youtube.com/" className="gallery_link">
+                        <a href="https://www.snapchat.com/" className="gallery_link">
                             <img src={pictures.snap} alt="" className="thumbnail"/>
                         </a>
                     </li>
@@ -18,22 +18,22 @@ export class Links2 extends Component {
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://bootcampspot-v2.com/" className="gallery_link">
+                        <a href="https://curiosity.com/" className="gallery_link">
                             <img src={pictures.curiosity} alt="" className="thumbnail"/>
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://www.youtube.com/" className="gallery_link">
+                        <a href="https://www.instagram.com/" className="gallery_link">
                             <img src={pictures.instgram} alt="" className="thumbnail"/>
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://video.vice.com/en_us?utm_source=googlead" className="gallery_link">
+                        <a href="https://twitter.com" className="gallery_link">
                             <img src={pictures.twitter} alt="" className="thumbnail"/>
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://smile.amazon.com/" className="gallery_link">
+                        <a href="https://netflix.com/" className="gallery_link">
                             <img src={pictures.netflix} alt="" className="thumbnail"/>
                         </a>
                     </li>
@@ -43,17 +43,17 @@ export class Links2 extends Component {
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://www.udemy.com/" className="gallery_link">
+                        <a href="https://www.wikipedia.org/" className="gallery_link">
                             <img src={pictures.wiki} alt="" className="thumbnail"/>
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://www.youtube.com/" className="gallery_link">
+                        <a href="https://www.spotify.com/" className="gallery_link">
                             <img src={pictures.spotify} alt="" className="thumbnail"/>
                         </a>
                     </li>
                     <li className="gallery-item">
-                        <a href="https://www.youtube.com/" className="gallery_link">
+                        <a href="https://www.linkedin.com/" className="gallery_link">
                             <img src={pictures.linkedin} alt="" className="thumbnail"/>
                         </a>
                     </li>
