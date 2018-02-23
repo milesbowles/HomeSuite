@@ -19,14 +19,24 @@ module.exports = {
     findAllUsers: function(email) {
         db.User.find({}, (err,res)=>{console.log(res)})
     },
+
+    /** Called by the apiRoutes when a user tries signing in */
     findUserToAuth: function(email, password, callback) {
+        /** Look through database for the email input */
         db.User.find({email: email}, (err,res) => {
-            console.log(res)
+            console.log(res);
+            /** If the result doesn't show up in the database */
             if (res.length === 0) {
                 console.log('incorrect email')
+                /** If the user IS in the database */
             } else {
                 console.log(this.passwordCheck(password, res[0].password))
-                callback(this.passwordCheck(password, res[0].password))
+                /** Check password: send true if exists and false if not */
+                /** Send username to update the greeting on main page */
+                callback({
+                    loggedIn: this.passwordCheck(password, res[0].password),
+                    username: res[0].username
+                })
             }
         })
     },

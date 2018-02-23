@@ -17,9 +17,12 @@ router.post('/auth/persist', function(req, res) {
 	})
 });
 
+/** This post is received when a user is trying to login */
 router.post('/auth', function(req, res) {
 	controller.findUserToAuth(req.body.email, req.body.password, (result) => {
-		res.send(result)
+		/** Send true or false depending on if the user's info is valid */
+		/** Also send the username to update the greeting */
+		res.send(result);
 	})
 });
 

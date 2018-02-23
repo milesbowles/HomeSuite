@@ -4,13 +4,21 @@ import { Login } from "../component/Login"
 import axios from "axios"
 
 export class RouteLogin extends Component {
-    state = {}
+    state = {
+        username: ""
+    }
+
+    /** Check the validity of the info passed by user in the login */
     checkAuth (event, email, password, toRemember) {
         event.preventDefault()
         console.log(email)
+        /** Send post request with the data input by user */
         axios.post('/api/auth', {email: email, password: password})
+        /** After evaluation by apiRoutes.js in routing */
         .then((res) => {
-        	this.setState({loggedIn: res.data})
+            localStorage.setItem("username", res.data.username);
+            /** Logged in will be either true or false */
+        	this.setState({loggedIn: res.data.loggedIn, username: res.data.username})
         })
     };
 
@@ -40,8 +48,10 @@ export class RouteLogin extends Component {
             /** If the user happens to be loggedIn already */
     	} else if (bool) {
             /** Simply return the main app */
-            return (<All />)
+            return (<All/>)
         }
+        /** If user doesn't already have a saved password */
+        /** And is not logged in, send him/her to login page */
         else {
     		return (
                 <Login 

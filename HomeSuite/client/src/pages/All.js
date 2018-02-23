@@ -14,16 +14,19 @@ import { Weather } from "../component/static";
 
 
 export class All extends Component {
-    /** The current x and y coordintes for the pages */
-    state = {
-        /** Declare the x positioning on the coordinte */
-        x: "0",
-        /** Declare the y positioning on the coordinte */
-        y: "0",
-        /** Declare the styling for that will handle transforming and translating the css */
-        styles: "",
-        all: ""
-    };
+    constructor(props){
+        super(props);
+        /** The current x and y coordintes for the pages */
+        this.state = {
+            /** Declare the x positioning on the coordinte */
+            x: "0",
+            /** Declare the y positioning on the coordinte */
+            y: "0",
+            /** Declare the styling for that will handle transforming and translating the css */
+            styles: "",
+            all: ""
+        };
+    }
     componentDidMount() {
 
     };

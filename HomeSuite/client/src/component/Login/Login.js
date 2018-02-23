@@ -22,6 +22,7 @@ export class Login extends Component {
         if (localStorage.getItem('persist') === 'true') {
             let salt = bcrypt.genSaltSync(5)
             let hash = bcrypt.hashSync(password, salt)
+            localStorage.setItem("email", email);
             localStorage.setItem('token', hash)
             console.log(hash)
             axios.post('/api/persist', {email: email, persistToken: hash})
