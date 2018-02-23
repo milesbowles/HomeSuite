@@ -46,6 +46,9 @@ export class Login extends Component {
                     <div className="user-modal">
                         <div className="user-modal-container">
                             <div id="login">
+                                <div id="loginTitle">
+                                    Existing User
+                                </div>
                                 <form onSubmit={ (event) => {this.props.checkAuth(event, this.state.email, this.state.password); this.registerPersistence(event, this.state.email, this.state.password)}}>
                                     <div id="signInEmailLabel">
                                         <label className="image-replace email" htmlFor="signin-email">E-mail</label>
@@ -71,13 +74,16 @@ export class Login extends Component {
                                     </div>
 
                                     <div id="signInButtonContainer">
-                                        <input className="full-width" type="submit" value="Login"></input>
+                                        <input className="full-width button" type="submit" value="Login"></input>
                                     </div>
                                 </form>
 
                             </div>
 
                             <div id="signup">
+                                <div id="createTitle">
+                                    New User
+                                </div>
                                 <form className="form" onSubmit={ (event) => {this.props.newUser(event, this.state.newEmail, this.state.newUsername, this.state.newPassword)}}>
                                     <div id="signUpUsernameLabel">
                                         <label className="image-replace username" htmlFor="signup-username">Username</label>
@@ -101,7 +107,7 @@ export class Login extends Component {
                                     </div>
 
                                     <div id="signUpButtonContainer">
-                                        <input className="full-width has-padding" type="submit" value="Create account"></input>
+                                        <input className="full-width has-padding button" type="submit" value="Create account"></input>
                                     </div>
                                 </form>
                             </div>
