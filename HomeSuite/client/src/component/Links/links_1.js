@@ -54,7 +54,7 @@ export class Links1 extends Component {
                     </li>
                     <li className="gallery-item">
                         <a href="https://www.youtube.com/" className="gallery_link">
-                            <img src={pictures.brain} alt="" className="thumbnail"/>
+                            <img src={pictures.linkedin} alt="" className="thumbnail"/>
                         </a>
                     </li>
                 </ul>
