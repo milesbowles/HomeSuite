@@ -54,7 +54,7 @@ export class Login extends Component {
                                         <label className="image-replace email" htmlFor="signin-email">E-mail</label>
                                     </div>
                                     <div id="signInEmailWrap">
-                                        <input className="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail" value='hello' onChange={(event) => {this.handleChange(event, 'email')}}></input>
+                                        <input className="full-width has-padding has-border" id="signin-email" type="email" name="email" placeholder="E-mail" value={this.state.email} onChange={(event) => {this.handleChange(event, 'email')}}></input>
                                     </div>
 
                                     <div id="signInPassLabel">

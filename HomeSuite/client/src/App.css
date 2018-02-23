@@ -246,6 +246,7 @@ body {
 
 #signInEmailWrap {
   margin-top: 5px;
+  color: black;
 }
 
 #signInPassLabel {
@@ -254,6 +255,7 @@ body {
 
 #signInPassWrap {
   margin-top: 5px;
+  color: black;
 }
 
 #rememberContainer {
@@ -270,6 +272,7 @@ body {
 
 #signUpUsernameWrap {
   margin-top: 5px;
+  color: black;
 }
 
 
@@ -279,6 +282,7 @@ body {
 
 #signUpEmailWrap {
   margin-top: 5px;
+  color: black;
 }
 
 #signUpPasswordLabel {
@@ -287,6 +291,7 @@ body {
 
 #signUpPasswordWrap {
   margin-top: 5px;
+  color: black;
 }
 
 #signUpButtonContainer {
