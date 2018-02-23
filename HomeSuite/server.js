@@ -34,9 +34,3 @@ mongoose.Promise = global.Promise;
 app.listen(PORT, function(){
     console.log("App listening on port " + PORT);
 });
-
-module.exports = {
-	test: function() {
-		console.log('hello')
-	}
-}

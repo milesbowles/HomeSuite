@@ -16,13 +16,6 @@ const apiRoutes = require("./users");
 router.use("/api", apiRoutes);
 
 
-/** This will re-route everything to the express root path */
-router.use(function(req, res){
-    /** When building the front end, this will reroute everything to the build's html file */
-    /** To allow routing to the path / */
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
 
 /** Export the routes */
 module.exports = router;
