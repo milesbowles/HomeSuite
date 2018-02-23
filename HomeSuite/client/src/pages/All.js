@@ -10,6 +10,7 @@ import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
 import { Links1, Links2, Links3 } from "../component/Links";
 import { Weather } from "../component/static";
+import {SettingsPage} from "../component/Settings";
 
 
 
@@ -159,7 +160,7 @@ export class All extends Component {
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>Home</span>
-                        <h1>Settings</h1>
+                        <SettingsPage/>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>Home</span>
