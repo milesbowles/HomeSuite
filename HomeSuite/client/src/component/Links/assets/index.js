@@ -16,5 +16,15 @@ export const pictures = {
     gmaps: require("./gmaps.png"),
     linkedin: require("./linkedin.png"),
     wiki: require("./wiki.png"),
-    spotify: require("./spotify.png")
+    spotify: require("./spotify.png"),
+    meetup: require("./meetup.png"),
+    sound: require("./sound.png"),
+    craiglist: require("./craigslist.png"),
+    evernote: require("./evernote.png"),
+    tumblr: require("./tumblr.png"),
+    wells: require("./wells.png"),
+    venmo: require("./venmo.png"),
+    zomato: require("./zomato.png"),
+    skype: require("./skype.png"),
+    cnet: require("./cnet.png"),
 }
