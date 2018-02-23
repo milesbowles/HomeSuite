@@ -5,6 +5,7 @@ import {Greeting} from "../component/greeting";
 import Calculator from "../component/calculator";
 import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
+import { Links1, Links2 } from "../component/Links";
 
 
 
@@ -149,7 +150,7 @@ export class All extends Component {
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--right-down js-down js-right" onClick={this.moveDownRight.bind(this)}>down/right</span>
-                        <h1>Weather</h1>
+                        <h1>Weather</h1> 
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left-down js-down js-left" onClick={this.moveDownLeft.bind(this)}>down/left</span>
@@ -162,12 +163,14 @@ export class All extends Component {
                     <div className="panel" data-x-pos="-1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--right-top js-up js-right" onClick={this.moveUpRight.bind(this)}>up/right</span>
                         <span className="panel__nav panel__nav--right js-right" onClick={this.moveRight.bind(this)}>right</span>
-                        <h1>Links</h1>
+                        {/* <h1>Links</h1> */}
+                        <Links1/>>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="-1" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left-top js-up js-left" onClick={this.moveUpLeft.bind(this)}>up/left</span>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>
-                        <h1>Links</h1>
+                        {/* <h1>Links</h1> */}
+                        <Links2/>>
                     </div>
                     <div className="panel" data-x-pos="1" data-y-pos="0" onClick={this.setPanelAndZoom.bind(this)}>
                         <span className="panel__nav panel__nav--left js-left" onClick={this.moveLeft.bind(this)}>left</span>

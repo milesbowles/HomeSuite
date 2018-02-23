@@ -34,7 +34,7 @@ export class YouTubeSearch extends Component {
     }, 300);
 
     return (
-      <div>
+      <div className="video-search">
         <SearchBar onSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
