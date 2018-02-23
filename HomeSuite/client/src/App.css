@@ -215,9 +215,86 @@ body {
     color: rgb(255, 255, 255);
   }
 
-.allContainer {
-    height: 100vh;
-    width: 100vw;
-    background-color: green;
-    z-index: 10;
+
+.logoContainer {
+  margin: auto;
+  height: 200px;
+  width: 300px;
+}
+.allLoginContainer {
+    margin: auto;
+    margin-top: -40px;
+    height: 400px;
+    width: 550px;
+    background-color: #2b2d30;
+}
+
+#login {
+  float: left;
+  margin-left: 70px;
+}
+
+#signup {
+  margin-left: 300px;
+}
+
+#signInEmailLabel {
+  margin-top: 30px;
+}
+
+#signInEmailWrap {
+  margin-top: 5px;
+}
+
+#signInPassLabel {
+  margin-top: 30px;
+}
+
+#signInPassWrap {
+  margin-top: 5px;
+}
+
+#rememberContainer {
+  margin-top: 20px;
+}
+
+#signInButtonContainer {
+  margin-top: 10px;
+}
+
+#signUpUsernameLabel {
+  padding-top: 30px;
+}
+
+#signUpUsernameWrap {
+  margin-top: 5px;
+}
+
+
+#signUpEmailLabel {
+  margin-top: 15px;
+}
+
+#signUpEmailWrap {
+  margin-top: 5px;
+}
+
+#signUpPasswordLabel {
+  margin-top: 15px;
+}
+
+#signUpPasswordWrap {
+  margin-top: 5px;
+}
+
+#signUpButtonContainer {
+  margin-top: 20px;
+}
+
+#rememberLabel {
+  float: left;
+}
+
+#rememberBox {
+  margin-left: 140px;
 }

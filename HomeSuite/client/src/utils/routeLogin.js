@@ -10,7 +10,6 @@ export class RouteLogin extends Component {
         console.log(email)
         axios.post('/api/auth', {email: email, password: password})
         .then((res) => {
-            console.log(res.data, '!!!!!!!!!!!!!!!!!!!!!!!!!!')
         	this.setState({loggedIn: res.data})
         })
     };
@@ -27,14 +26,12 @@ export class RouteLogin extends Component {
     	if (localStorage.getItem('persist') === "true" && !bool) {
             axios.post('/api/auth/persist', {persistToken: localStorage.getItem('token')})
             .then((res) => {
-                console.log(res.data)
                 if (res.data) {
                     this.setState({loggedIn: true})
                 }
             })
             return null
     	} else if (bool) {
-            console.log(bool)
             return (<All />)
         }
         else {

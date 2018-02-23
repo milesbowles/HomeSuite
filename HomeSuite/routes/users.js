@@ -21,7 +21,7 @@ router.post('/create', function(req, res) {
 
 router.post('/persist', function(req, res) {
 	controller.findUserToUpdate(req.body.email, req.body.persistToken, (result) => {
-		console.log(result)
+		console.log(result, '!!!!!!!!!!!!!!!!')
 		res.send(result)
 	})
 })
