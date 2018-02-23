@@ -44,6 +44,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1);
     width: 100vw;
     will-change: transform;
+    /* padding-bottom: -25px; */
     /* background-image: url(../assets/background.jpeg);
     background-size: cover; */
   }

@@ -1,0 +1,20 @@
+export const pictures = {
+    amazon: require("./amazon.png"),
+    brain: require("./brain.png"),
+    coding: require("./coding.png"),
+    github: require("./github.png"),
+    google: require("./google.png"),
+    udemy: require("./udemy-white.png"),
+    vice: require("./vice-white.png"),
+    youtube: require("./youtube.png"),
+    bbc: require("./bbc.png"),
+    curiosity: require("./curiosity.png"),
+    snap: require("./snap.png"),
+    instgram: require("./instagram.png"),
+    netflix: require("./netflix.png"),
+    twitter: require("./twitter.png"),
+    gmaps: require("./gmaps.png"),
+    linkedin: require("./linkedin.png"),
+    wiki: require("./wiki.png"),
+    spotify: require("./spotify.png")
+}
