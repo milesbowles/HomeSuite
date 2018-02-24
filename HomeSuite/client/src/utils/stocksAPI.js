@@ -49,7 +49,7 @@ function loadAllAPIFunctionsCalls(funcs) {
 }
 function formatDataAsObject(company, data) {
     /** Return the format to be taken in by the state variable in the stock page */
-    return { name: company, price: data.data.dataset_data.data[0][4] };
+    return { tickerSymbol: company, price: data.data.dataset_data.data[0][4] };
 }
 
 /** Export to be able to use in the main app */

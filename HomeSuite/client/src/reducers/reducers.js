@@ -27,7 +27,7 @@ function stockReqRes(state = {isFetching: false, items: []}, action){
 function stocks(state = [], action){
     console.log(state);
     switch(action.type){
-        case ADD_STOCK:
+        case RECEIVE_STOCKS:
             // return Object.assign({}, state, {
             //     [action.tickerSymbol]: stockReqRes(state[action.tickerSymbol], action)
                 

@@ -23,10 +23,11 @@ let AddStock = ({dispatch}) => {
                     }
                     /** If ticker symbol is defined */
                     /** call the addStock action creator with the ticker symbol provided */
-                    dispatch(addStock(tickerSymbol.value));
+                    dispatch(fetchStocks(tickerSymbol.value));
                     /** Clear the text in the input */
                     tickerSymbol.value = "";
                 }}
+                className="form-group"
             >
                 <input
                     ref={node => {

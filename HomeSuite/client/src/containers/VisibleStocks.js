@@ -1,7 +1,7 @@
 /** Bring in ability to connect to a component */
 import {connect} from "react-redux";
 /** Import Stocks table */
-import {Table} from "../component/stocks";
+import {Table} from "../component/stocks/stockTable";
 
 /** Define a function to handle viewing Stocks */
 const getStockInfo = defaultStocks => {
