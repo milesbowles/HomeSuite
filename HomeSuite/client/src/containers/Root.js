@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import '../index.css';
 import App from '../App';
 import registerServiceWorker from '../registerServiceWorker';
+import API from "../actions/preload";
 
 /** Imports necessary for Redux */
 
@@ -13,7 +14,7 @@ import { Provider } from 'react-redux'
 /** Import the defining of the store for the app */
 import configureStore from '../configureStore'
  
-const store = configureStore()
+const store = configureStore();
  
 export default class Root extends Component {
   render() {

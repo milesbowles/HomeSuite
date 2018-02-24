@@ -11,18 +11,10 @@ const APIKEY = "hkv27C8yymw8ekmbFQas";
 export const ADD_STOCK = "ADD_STOCK";
 export const REQUEST_STOCKS = "REQUEST_STOCKS";
 export const RECEIVE_STOCKS = "RECEIVE_STOCKS";
+export const GET_DEFAULT_STOCK_INFO = "GET_DEFAULT_STOCK_INFO";
 
 /** Export action creators */
-
-/** Takes in a ticker symbol to be accessed by the api */
-export function addStock(tickerSymbol){
-    /** Returns the type for the reducer to read */
-    /** As well as the ticker */
-    return {type: ADD_STOCK, tickerSymbol, price: 11};
-}
-
 /** These actions will be called by the thunk middleware */
-
 
 /** It returns type for reducers to read along with the stock ticker */
 export function requestStockInfo(tickerSymbol){
