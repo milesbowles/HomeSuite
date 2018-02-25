@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk'
 /** Allows developer to log progress of state changes */
 import { createLogger } from 'redux-logger'
 /** Bring in the reducers which dispatch actions */
-import rootReducer from './reducers/reducers'
+import suiteApp from './reducers/reducers'
 
 
 /** Refer to the logger to use as a console */
@@ -16,7 +16,7 @@ const loggerMiddleware = createLogger()
 /** It will be created in the containers/Root file */
 export default function configureStore(preloadedState) {
   return createStore(
-    rootReducer,
+    suiteApp,
     preloadedState,
     applyMiddleware(
       thunkMiddleware,

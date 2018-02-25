@@ -1,7 +1,6 @@
 
 import React from "react";
 import {All} from "./pages/All";
-// import "./App.test.js";
 
 import { RouteLogin } from "./utils/routeLogin"
 // import Stocks from "./component/stocks";

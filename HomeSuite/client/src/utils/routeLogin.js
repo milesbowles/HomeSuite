@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { All } from "../pages"
-import { Login } from "../component/Login"
+// import { Login } from "../component/Login"
+import LoginWatch from "../containers/LoginWatch";
 import axios from "axios"
 
 export class RouteLogin extends Component {
@@ -54,10 +55,11 @@ export class RouteLogin extends Component {
         /** And is not logged in, send him/her to login page */
         else {
     		return (
-                <Login 
-                    checkAuth={this.checkAuth.bind(this)}
-                    newUser={this.newUser.bind(this)}
-                />
+                // <Login 
+                //     checkAuth={this.checkAuth.bind(this)}
+                //     newUser={this.newUser.bind(this)}
+                // />
+                <LoginWatch/>
             )
     	}
     };

@@ -4,8 +4,8 @@ import {connect} from "react-redux";
 import {Table} from "../component/stocks/stockTable";
 
 /** Define a function to handle viewing Stocks */
-const getStockInfo = defaultStocks => {
-    return defaultStocks;
+const getStockInfo = stocks => {
+    return stocks;
 }
 
 /** Relate state to the props in the stock table component */
