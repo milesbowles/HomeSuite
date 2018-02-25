@@ -5,9 +5,9 @@ import LoginWatch from "../containers/LoginWatch";
 import axios from "axios"
 
 export class RouteLogin extends Component {
-    state = {
-        username: ""
-    }
+    // state = {
+    //     username: ""
+    // }
 
     // /** Check the validity of the info passed by user in the login */
     // checkAuth (event, email, password, toRemember) {
@@ -31,13 +31,13 @@ export class RouteLogin extends Component {
     //     })
     // };
 
-    routeApp(bool) {
-        if (localStorage.getItem("persist") === "true"){
-            return (<All/>);
-        }
-        else{
-            return (<LoginWatch/>);
-        }
+    // routeApp(bool) {
+    //     if (localStorage.getItem("persist") === "true"){
+    //         return (<All/>);
+    //     }
+    //     else{
+    //         return (<LoginWatch/>);
+    //     }
         // /** If localStorage has item "persist" and if not already logged in */
     	// if (localStorage.getItem('persist') === "true" && !bool) {
         //     /** Send post request with the localStorage item: token */
@@ -68,9 +68,14 @@ export class RouteLogin extends Component {
         //         <LoginWatch/>
         //     )
     	// }
-    };
+    // };
 	render() {
-		return this.routeApp(this.state.loggedIn)
+		if (localStorage.getItem("persist") === "true"){
+            return (<All/>);
+        }
+        else{
+            return (<LoginWatch/>);
+        }
 	}
 
 }
