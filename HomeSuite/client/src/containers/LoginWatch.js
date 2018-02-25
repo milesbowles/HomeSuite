@@ -2,7 +2,7 @@ import React, {Component} from "react";
 /** Allows link between component and redux */
 import {connect} from "react-redux";
 /** Import actions this component can dispatch */
-import {fetchLogin, fetchCreateUser} from "../actions/actions";
+import {fetchLogin, fetchCreateUser} from "../actions";
 import axios from "axios";
 import bcrypt from "bcrypt-nodejs";
 
@@ -84,6 +84,9 @@ let LoginWatch = ({dispatch}) => {
                                 </form>
 
                             </div>
+
+
+
 
                             <div id="signup">
                                 <div id="createTitle">

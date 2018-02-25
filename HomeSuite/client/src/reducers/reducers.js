@@ -1,9 +1,8 @@
 import {combineReducers} from "redux";
-import {LOGIN, CREATE_USER} from "../actions/actions";
-import {REQUEST_LOGIN, RECEIVE_LOGIN, REQUEST_CREATE_USER, RECEIVE_CREATE_USER, REQUEST_PERSIST, RECEIVE_PERSIST, REQUEST_STOCKS, RECEIVE_STOCKS} from "../actions/actions";
+import {REQUEST_LOGIN, RECEIVE_LOGIN, REQUEST_CREATE_USER, RECEIVE_CREATE_USER, REQUEST_PERSIST, RECEIVE_PERSIST, REQUEST_STOCKS, RECEIVE_STOCKS} from "../actions";
 
 /** REQRES FOR ALL ACTIONS *//////////////////////////////////////////////////////////////////////////////////////////////////
-function loginReqRes(state = {isFetching: false}, action){
+function ReqRes(state = {isFetching: false}, action){
     
     switch(action.type){
 
@@ -17,11 +16,8 @@ function loginReqRes(state = {isFetching: false}, action){
             return Object.assign({}, state, {
                 isFetching: false
             });
-        default: return state;    
-    }
-}
-function createUserReqRes(state ={isFetching: false}, action){
-    switch(action.type){
+
+
         /** CREATE USER REQRES *//////////////////////////////////////
         case REQUEST_CREATE_USER:
             return Object.assign({}, state, {
@@ -31,13 +27,11 @@ function createUserReqRes(state ={isFetching: false}, action){
             return Object.assign({}, state, {
                 isFetching: false
             });
-        default: return state;
-    }
-}
+        
 
-function persistReqRes(state = {isFetching: false}, action){
-    switch(action.type){
-        /** CREATE PERSISTENCE REQRES */
+
+
+        /** CREATE PERSISTENCE REQRES *///////////////////////////////////////////
         case REQUEST_PERSIST:
             return Object.assign({}, state, {
                 isFetching: true
@@ -46,12 +40,10 @@ function persistReqRes(state = {isFetching: false}, action){
             return Object.assign({}, state, {
                 isFetching: false
             });
-        default: return state;
-    }
-}
+        
 
-function stockReqRes(state = {isFetching: false}, action){
-    switch(action.type){
+
+
         /** STOCKS REQRES */////////////////////////////////////////////
         case REQUEST_STOCKS:
             /** Translate the booleans into the state */
@@ -64,7 +56,9 @@ function stockReqRes(state = {isFetching: false}, action){
                 isFetching: false
             })
 
-        /** Return the empty false state by default */
+
+
+        /** Return the false state by default */
         default: return state;
     }
 }
@@ -72,7 +66,7 @@ function stockReqRes(state = {isFetching: false}, action){
 
 /** ACTUAL REDUCERS */////////////////////////////////////////////////////////////////////////////////
 
-
+/** LOGIN REDUCER */
 function login(state = {}, action){
     switch(action.type){
         case RECEIVE_LOGIN:
@@ -84,7 +78,7 @@ function login(state = {}, action){
     }
 }
 
-
+/** CREATE USER REDUCER */
 function createUser(state = {}, action){
     switch(action.type){
         case RECEIVE_CREATE_USER:
@@ -95,7 +89,7 @@ function createUser(state = {}, action){
     }
 }
 
-
+/** PERSISTENCE REDUCER */
 function persist(state = {}, action){
     switch(action.type){
         case RECEIVE_PERSIST:
@@ -109,7 +103,7 @@ function persist(state = {}, action){
 
 
 
-/** STOCKS REDUCERS *////////////////////////////////////////////////////////////////
+/** STOCKS REDUCER *////////////////////////////////////////////////////////////////
 
 function stocks(state = [], action){
     console.log(state);
@@ -121,6 +115,8 @@ function stocks(state = [], action){
     }
 }
 
+
+/** COMBINE ALL USERS TO EXPORT */
 const suiteApp = combineReducers({
     login,
     createUser,

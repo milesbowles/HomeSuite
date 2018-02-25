@@ -1,7 +1,7 @@
 import React from "react";
 /** Allows to link to components */
 import {connect} from "react-redux";
-import {addStock, fetchStocks} from "../actions/actions";
+import {addStock, fetchStocks} from "../actions";
 
 /** Define the AddStock component */
 /** Add stock is both a component and a dispatcher */
