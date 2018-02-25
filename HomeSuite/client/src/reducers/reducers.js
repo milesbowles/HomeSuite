@@ -1,11 +1,27 @@
 import {combineReducers} from "redux";
-import {REQUEST_LOGIN, RECEIVE_LOGIN, REQUEST_CREATE_USER, RECEIVE_CREATE_USER, REQUEST_PERSIST, RECEIVE_PERSIST, REQUEST_STOCKS, RECEIVE_STOCKS} from "../actions";
+import {
+
+    /** For logging in */
+    REQUEST_LOGIN, 
+    RECEIVE_LOGIN, 
+
+    /** For creating a new user */
+    REQUEST_CREATE_USER, 
+    RECEIVE_CREATE_USER, 
+
+    /** To persist login */
+    REQUEST_PERSIST, 
+    RECEIVE_PERSIST, 
+
+    /** For stock retrieval */
+    REQUEST_STOCKS, 
+    RECEIVE_STOCKS
+
+} from "../actions";
 
 /** REQRES FOR ALL ACTIONS *//////////////////////////////////////////////////////////////////////////////////////////////////
-function ReqRes(state = {isFetching: false}, action){
-    
+function ReqRes(state = {isFetching: false}, action){ 
     switch(action.type){
-
 
         /** LOGIN REQRES *///////////////////////////////////////////
         case REQUEST_LOGIN:
@@ -27,8 +43,6 @@ function ReqRes(state = {isFetching: false}, action){
             return Object.assign({}, state, {
                 isFetching: false
             });
-        
-
 
 
         /** CREATE PERSISTENCE REQRES *///////////////////////////////////////////
@@ -40,8 +54,6 @@ function ReqRes(state = {isFetching: false}, action){
             return Object.assign({}, state, {
                 isFetching: false
             });
-        
-
 
 
         /** STOCKS REQRES */////////////////////////////////////////////
@@ -57,7 +69,6 @@ function ReqRes(state = {isFetching: false}, action){
             })
 
 
-
         /** Return the false state by default */
         default: return state;
     }
@@ -66,7 +77,7 @@ function ReqRes(state = {isFetching: false}, action){
 
 /** ACTUAL REDUCERS */////////////////////////////////////////////////////////////////////////////////
 
-/** LOGIN REDUCER */
+/** LOGIN REDUCER *///////////////////////////////////////////////////////////////
 function login(state = {}, action){
     switch(action.type){
         case RECEIVE_LOGIN:
@@ -78,7 +89,7 @@ function login(state = {}, action){
     }
 }
 
-/** CREATE USER REDUCER */
+/** CREATE USER REDUCER *//////////////////////////////////////////////////////////
 function createUser(state = {}, action){
     switch(action.type){
         case RECEIVE_CREATE_USER:
@@ -89,7 +100,7 @@ function createUser(state = {}, action){
     }
 }
 
-/** PERSISTENCE REDUCER */
+/** PERSISTENCE REDUCER *///////////////////////////////////////////////////////////
 function persist(state = {}, action){
     switch(action.type){
         case RECEIVE_PERSIST:
@@ -99,9 +110,6 @@ function persist(state = {}, action){
         default: return state;
     }
 }
-
-
-
 
 /** STOCKS REDUCER *////////////////////////////////////////////////////////////////
 
@@ -116,7 +124,7 @@ function stocks(state = [], action){
 }
 
 
-/** COMBINE ALL USERS TO EXPORT */
+/** COMBINE ALL USERS TO EXPORT to the store in the ../configureStore.js file */
 const suiteApp = combineReducers({
     login,
     createUser,
