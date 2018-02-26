@@ -6,8 +6,9 @@ import Calculator from "../component/calculator";
 import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
 import { Links1, Links2, Links3 } from "../component/Links";
-import { Weather } from "../component/static";
+// import { Weather } from "../component/static";
 import {SettingsPage} from "../component/Settings";
+import {Weather} from "../component/Weather";
 
 
 

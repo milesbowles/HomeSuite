@@ -9,7 +9,7 @@ export class RouteLogin extends Component {
     //     username: ""
     // }
 
-    // /** Check the validity of the info passed by user in the login */
+    /** Check the validity of the info passed by user in the login */
     // checkAuth (event, email, password, toRemember) {
     //     event.preventDefault()
     //     console.log(email)

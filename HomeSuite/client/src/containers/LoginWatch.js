@@ -2,7 +2,7 @@ import React, {Component} from "react";
 /** Allows link between component and redux */
 import {connect} from "react-redux";
 /** Import actions this component can dispatch */
-import {fetchLogin, fetchCreateUser} from "../actions";
+import {fetchLogin, fetchCreateUser, fetchPersist} from "../actions";
 import axios from "axios";
 import bcrypt from "bcrypt-nodejs";
 
@@ -74,7 +74,7 @@ let LoginWatch = ({dispatch}) => {
                                         <label className="image-replace password" htmlFor="rememberCheckBox">Remember Me</label>
                                         </div>
                                         <div id="rememberBox">
-                                        <input className="full-width has-padding has-border" id="rememberCheckBox" type="checkbox" name="remember" onClick={(event) => {this.updateLoginPersist(event)}}></input>
+                                        <input className="full-width has-padding has-border" id="rememberCheckBox" type="checkbox" name="remember" onClick={(event) => {dispatch(fetchPersist())}}/>
                                         </div>
                                     </div>
 
