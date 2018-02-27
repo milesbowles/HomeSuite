@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import {Clock} from "../component/clock";
-import {Greeting} from "../component/greeting";
+import {Greeting} from "../component/Greeting";
 import Calculator from "../component/calculator";
 import {Stocks} from "../component/stocks";
 import { YouTubeSearch } from "../component/VideoSearch";
