@@ -15,7 +15,19 @@ export function requestStockInfo(tickerSymbol) {
 
 /** Returns type for reducers to evaluate */
 export function receiveStockInfo(tickerSymbol, json) {
-    return { type: RECEIVE_STOCKS, tickerSymbol, price: json.dataset_data.data[0][4] };
+    let todayPrice = json.dataset_data.data[0][4];
+    let yesterdayPrice = json.dataset_data.data[1][4];
+    let trend;
+    if (Number(todayPrice) > Number(yesterdayPrice)){
+        trend = Number(todayPrice) - Number(yesterdayPrice);
+    }
+    else if (Number(todayPrice) < Number(yesterdayPrice)){
+        trend = Number(todayPrice) - Number(yesterdayPrice);
+    }
+    else {
+        trend = 0;
+    }
+    return { type: RECEIVE_STOCKS, tickerSymbol, price: json.dataset_data.data[0][4], trend: trend.toFixed(2)};
 }
 
 /** Using what's known as thunk middleware: below */

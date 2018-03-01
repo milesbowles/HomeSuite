@@ -34,6 +34,7 @@ let AddStock = ({dispatch}) => {
                         /** Refer ticker symbol to the input field text */
                         tickerSymbol = node
                     }}
+                    placeholder="NASDAQ ticker symbol"
                 />
                 <button type="submit">
                     Add Stock

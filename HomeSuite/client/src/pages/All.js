@@ -8,7 +8,7 @@ import { YouTubeSearch } from "../component/VideoSearch";
 import { Links1, Links2, Links3 } from "../component/Links";
 // import { Weather } from "../component/static";
 import {SettingsPage} from "../component/Settings";
-import {Weather} from "../component/Weather";
+import {Weather} from "../component/Weather/Weather";
 
 
 

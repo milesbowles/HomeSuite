@@ -15,11 +15,13 @@ import {
 
     /** For stock retrieval */
     REQUEST_STOCKS, 
-    RECEIVE_STOCKS
+    RECEIVE_STOCKS,
+
+    ADD_CITY
 
 } from "../actions";
 
-/** REQRES FOR ALL ACTIONS *//////////////////////////////////////////////////////////////////////////////////////////////////
+/** REQRES FOR ALL Asynchronous ACTIONS *//////////////////////////////////////////////////////////////////////////////////////////////////
 function ReqRes(state = {isFetching: false}, action){ 
     switch(action.type){
 
@@ -114,11 +116,26 @@ function persist(state = {}, action){
 /** STOCKS REDUCER *////////////////////////////////////////////////////////////////
 
 function stocks(state = [], action){
-    console.log(state);
     switch(action.type){
         case RECEIVE_STOCKS:
-            return [...state, {tickerSymbol: action.tickerSymbol, price: action.price}];
+            return [...state, {
+                tickerSymbol: action.tickerSymbol, 
+                price: action.price, 
+                trend: action.trend
+            }];
         /** If no action is provided, return default state */
+        default: return state;
+    }
+}
+
+/** WEATHER REDUCER */
+
+function weather(state = {}, action){
+    switch(action.type){
+        case ADD_CITY:
+            return Object.assign({}, state, {
+                city: action.city
+            });
         default: return state;
     }
 }
@@ -129,7 +146,8 @@ const suiteApp = combineReducers({
     login,
     createUser,
     persist,
-    stocks
+    stocks,
+    weather
 });
 
 export default suiteApp;

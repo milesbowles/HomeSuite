@@ -25,8 +25,9 @@ export class Table extends Component {
             <table style={{ width: "75%" }}>
                 <tbody>
                     <tr>
-                        <th className="col-md-6">Company Ticker Symbol</th>
-                        <th className="col-md-6">Current Selling Price</th>
+                        <th className="col-md-4">Company Ticker Symbol</th>
+                        <th className="col-md-4">Current Selling Price</th>
+                        <th className="col-md-4">Trend</th>
                     </tr>
                     {this.props.stocks.reverse().map((stock, index) => (
                         <Row key={index} {...stock}/>

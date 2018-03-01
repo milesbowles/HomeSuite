@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./Weather.css";
 
 window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  
 window.myWidgetParam.push({

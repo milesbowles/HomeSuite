@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import API from "../../utils/stocksAPI";
 import VisibleStocks from "../../containers/VisibleStocks";
 import "./Stocks.css";
 import AddStock from "../../containers/AddStock";
