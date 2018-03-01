@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export class Greeting extends Component {
-    state = {
-        time: "",
-        greeting: "",
-        hours: ""
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            time: "",
+            greeting: "",
+            hours: ""
+        };
+    }
     componentDidMount() {
+        this.updateUsername();
         // Sets state as soon as component mounts 
         this.setState({ time: new Date() }, () => this.updateGreeting());
         /** Every second that passes, update the greeting*/
@@ -14,11 +19,16 @@ export class Greeting extends Component {
             this.setState({ time: new Date() }, () => this.updateGreeting());
         }, 1000);
     };
+
+    updateUsername(){
+        this.setState({username: this.props.username});
+    }
+
     updateGreeting() {
 
         var greeting = "";
         // TODO: make this dynamic
-        let username = 'Miles'; 
+        let username = localStorage.getItem("username"); 
 
         let hours = (this.state.time.getHours());
 

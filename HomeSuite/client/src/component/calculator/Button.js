@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
+/** Button class component */
 class Button extends React.Component {
   handleClick = () => {
+    /** Call on clickHandler function */
+    /** Takes in a name as argument */
     this.props.clickHandler(this.props.name);
   }
 
@@ -28,6 +31,8 @@ class Button extends React.Component {
     );
   }
 }
+/** propTypes handle proper passing of props */
+/** Assure component doesn't break down due to faulty parameters */
 Button.propTypes = {
   name: PropTypes.string,
   orange: PropTypes.bool,

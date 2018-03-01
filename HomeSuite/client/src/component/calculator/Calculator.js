@@ -5,8 +5,13 @@ import calculate from './logic/calculate';
 import './Calculator.css';
 
 class Calculator extends React.Component {
+  /** Calculator constructor */
+  /** Takes in props */
   constructor(props) {
+    /** Inherit the react component properties */
     super(props);
+    /** Define state variables for the component */
+    /** These are initially null */
     this.state = {
       total: null,
       next: null,
@@ -15,6 +20,9 @@ class Calculator extends React.Component {
   }
 
   handleClick = (buttonName) => {
+    /** Call on the calculate function */
+    /** Enter the state object and the buttonName as parameters */
+    /** calculate returns an object to setState of react component */
     this.setState(calculate(this.state, buttonName));
   }
 

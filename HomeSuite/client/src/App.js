@@ -1,17 +1,15 @@
 
 import React from "react";
-// import "./App.test.js";
-/** This concatenated import is possible because the index file in /pages exports all the files together */
-// import {MainPage, Up, Down, Left, Right, UpLeft, UpRight, DownLeft, DownRight} from "./pages";
-import {All} from "./pages";
+import {All} from "./pages/All";
+
+import { RouteLogin } from "./utils/routeLogin"
 // import Stocks from "./component/stocks";
 /** Define the application usage */
 const App = () =>
       /** A wrapper that encapsulates everything */
       <div className="site-wrap">
         <div className="panel-wrap animate--none">
-          <All/>
-          {/* <Stocks/> */}
+          <RouteLogin />
         </div>
       </div>
 export default App;
