@@ -1,9 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <script type="text/javascript">
-  window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
+import React from "react";
+
+export const Graph = props =>
+
+new CanvasJS.Chart("chartContainer",
     {
 
       title:{
@@ -30,13 +29,3 @@
       }
       ]
     });
-
-    chart.render();
-  }
-  </script>
- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
-<body>
-  <div id="chartContainer" style="height: 300px; width: 100%;">
-  </div>
-</body>
-</html>
