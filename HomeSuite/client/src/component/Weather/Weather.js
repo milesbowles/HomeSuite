@@ -4,9 +4,9 @@ import "./Weather.css";
 window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  
 window.myWidgetParam.push({
     id: 11,
-    cityid: "5339066",
+    cityid: "5391811",
     appid: "166a433c57516f51dfab1f7edaed8413",
-    units: 'metric',
+    units: 'imperial',
     containerid: 'openweathermap-widget-11'
 });  
 
