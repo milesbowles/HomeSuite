@@ -3,6 +3,7 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from './logic/calculate';
 import './Calculator.css';
+import { pictures } from "../Links/assets";
 
 class Calculator extends React.Component {
   /** Calculator constructor */
@@ -28,13 +29,19 @@ class Calculator extends React.Component {
 
   render() {
     return (
-      <div className="component-app">
-        <Display
-          value={this.state.next || this.state.total || '0'}
-        />
-        <ButtonPanel
-          clickHandler={this.handleClick}
-        />
+      <div>
+        <a href="https://www.wolframalpha.com/">
+          <img src={pictures.wolfram} alt="" className="wolf"/>
+        </a>
+        <div className="col-md-1"></div>
+        <div className="component-app col-md-9" className="calcComp">
+          <Display
+            value={this.state.next || this.state.total || '0'}
+          />
+          <ButtonPanel
+            clickHandler={this.handleClick}
+          />
+        </div>
       </div>
     );
   }

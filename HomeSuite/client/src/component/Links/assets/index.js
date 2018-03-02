@@ -27,4 +27,5 @@ export const pictures = {
     zomato: require("./zomato.png"),
     skype: require("./skype.png"),
     cnet: require("./cnet.png"),
+    wolfram: require("./wolfram.png")
 }
