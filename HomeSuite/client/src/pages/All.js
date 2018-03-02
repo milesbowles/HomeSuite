@@ -148,7 +148,7 @@ export class All extends Component {
                         </div>
                     </div>
                     <div className="panel" data-x-pos="0" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>
-                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>down</span>
+                        <span className="panel__nav panel__nav--down js-down" onClick={this.moveDown.bind(this)}>Home</span>
                         <YouTubeSearch/>
                     </div>
                     <div className="panel" data-x-pos="-1" data-y-pos="1" onClick={this.setPanelAndZoom.bind(this)}>

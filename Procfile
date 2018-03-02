@@ -1,0 +1,1 @@
+web: cd HomeSuite && node server.js
